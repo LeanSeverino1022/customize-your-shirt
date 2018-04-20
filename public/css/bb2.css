@@ -1,0 +1,204 @@
+
+@font-face {
+	font-family: 'BrandonGrotesqueRegular';
+	src: url('../fonts/Museo500-Regular.eot');
+	src: local('☺'), url('../fonts/Museo500-Regular.woff') format('woff'), url('../fonts/Museo500-Regular.ttf') format('truetype'), url('../fonts/Museo500-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'BrandonGrotesqueLight';
+    src: url('../fonts/brandon_light.eot');
+    src: url('../fonts/brandon_light.eot') format('embedded-opentype'),
+         url('../fonts/brandon_light.woff') format('woff'),
+         url('../fonts/brandon_light.ttf') format('truetype'),
+         url('../fonts/brandon_light.svg#BrandonGrotesqueLight') format('svg');
+}
+
+
+@font-face {
+    font-family: 'BrandonGrotesqueRegular';
+    src: url('../fonts/brandon_reg.eot');
+    src: url('../fonts/brandon_reg.eot') format('embedded-opentype'),
+         url('../fonts/brandon_reg.woff') format('woff'),
+         url('../fonts/brandon_reg.ttf') format('truetype'),
+         url('../fonts/brandon_reg.svg#BrandonGrotesqueRegular') format('svg');
+}
+
+
+@font-face {
+    font-family: 'BrandonGrotesqueBold';
+    src: url('../fonts/brandon_bld.eot');
+    src: url('../fonts/brandon_bld.eot') format('embedded-opentype'),
+         url('../fonts/brandon_bld.woff') format('woff'),
+         url('../fonts/brandon_bld.ttf') format('truetype'),
+         url('../fonts/brandon_bld.svg#BrandonGrotesqueBold') format('svg');
+}
+
+@font-face {
+    font-family: 'SentinelLight';
+    src: url('../fonts/sentinel-light_0.eot');
+    
+src: url('../fonts/sentinel-light_0.eot') format('embedded-opentype'),
+         
+url('../fonts/sentinel-light_0.woff') format('woff'),
+         
+url('../fonts/sentinel-light_0.ttf') format('truetype'),
+         url('../fonts/sentinel-light_0.svg#SentinelLight') format('svg');
+}
+
+@font-face {
+    font-family: 'SentinelBook';
+    src: url('../fonts/sentinel-book_0.eot');
+    
+src: url('../fonts/sentinel-book_0.eot') format('embedded-opentype'),
+         
+url('../fonts/sentinel-book_0.woff') format('woff'),
+         
+url('../fonts/sentinel-book_0.ttf') format('truetype'),
+         url('../fonts/sentinel-book_0.svg#SentinelBook') format('svg');
+}
+
+
+
+
+body, html {
+	padding:0; margin:0;
+}
+.mfoot {width:100%; height: 376px; clear: both; float: left; text-align:center;  background-image: url('img/mfoot.jpg'); background-repeat: no-repeat; background-size: auto; background-position: center center;}
+.resp-tabs-container.ver_1T, .resp-tabs-container.ver_1T2 {min-width: 95%;}
+.mright2 {float:left; clear: both; margin-left: 46px; margin-top: 20px; max-width: 500px; background:#fff; padding-bottom:120px;}
+.mright2 img {width: 100%; height: auto;}
+.mtitle {clear:both; float:left; width: 98%; padding-left: 2%; background:#fff; padding-top: 20px; margin-bottom: -15px; }
+
+.mright {float:left; clear: both; margin-top: -110px; margin-bottom: 20px;}
+
+.bread {float:left; clear: both; width: 100%; background: #fff; padding: 5px 2%;}
+.rightsidebox {background:#fff; float:left; width: 40%;     min-width: 450px;}
+.scale-1 {background-size: 40% !important; background-position: center center !important;}
+.scale-2 {background-size: 70% !important;background-position: center center !important;}
+.scale-3 {background-size: 100% !important; background-position: center center !important;}
+
+
+.mtop {
+background-size: auto;
+    text-align: center;
+    width: 100%;
+    clear: both;
+    float: left;
+    height: 64px;
+    background-image: url(img/mtop.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    opacity: 0.93;
+    background-color: #fff;
+    z-index: 99;
+    position: fixed;
+    padding-bottom: 0px;
+}
+
+.container {width:1248px; margin:0 auto; padding:70px 0 0 0; position: relative;}
+
+.top2 {text-align: center;float:left;clear: both;width: 100%;padding: 30px 0px;background: #fff;}
+
+.color-toggle-contain {width:500px !important; float:left; clear:none;}
+
+.color-thumb, .color-thumb2 {
+	    max-width: 37px;
+    max-height: 37px;
+    border-radius: 0 !important;
+    padding: 0 !important;
+	}
+.resp-tab-content {max-width: 710px;}
+.color-palettes-row {margin-left: -10px !important;}
+.tooltip2 {display: none !important;}
+
+.buy {float:left; margin-top: 30px; }
+.resp-tabs-list.ver_1T2 {display: none !important;}
+.resp-tab-item.hor_1, .color-palettes-title {display: none !important;}
+.resp-vtabs .resp-tabs-container {min-height: unset !important;}
+#colortabs.show-tabs {margin-top:0 !important; max-width: 35%;}
+
+.love {clear: both; margin: 0 auto; width: 1100px;}
+.love img {max-width:100%; height: auto;}
+#rrr-contain {margin-left: 0px; max-width:550px;}
+#colortabs {margin-left: 40px;}
+.buy {margin-left: 40px;}
+#colortabs, .ttt3.curr-colors, h1 {font-family: 'BrandonGrotesqueBold' !important;}
+h1 {    margin-top: 0;
+    color: #333;
+    line-height: 1.3em; 
+    font-size: 1.75em; margin-bottom: 4px;
+    font-weight: 100;
+	font-family: 'SentinelBook' !important;
+	}
+.ttt3.curr-colors {color:#444 !important; margin-top: 10px;}
+
+.colortabs-layers li {font-family: 'BrandonGrotesqueRegular' !important;}
+
+.color-thumb, .color-thumb2 {font-family: 'GothamHTF-Bold' !important;}
+.product-number {
+    font-size: .75em;
+    font-family: 'BrandonGrotesqueBold',Arial,sans-serif;
+    color: #999;
+    clear: both;
+    float: left; margin-bottom:20px;
+    width: 100%;
+    min-height: 30px;
+}
+
+.bundle-option.form-group {
+    width: auto;
+    float: left;
+    margin-left: 0%;
+    clear: none;
+    margin-right: 2%;
+}
+::-moz-selection { color: #fff; background:#e10d32;}
+::selection { color: #fff; background:#e10d32; }
+
+.rulerzoom {position: absolute; background-image: url('img/ruler.png');  background-size: auto; background-position: left bottom; z-index: 9; left:0;bottom:0; width:100%; height: 100%;}
+.toggle-pdp {float:left; clear: both; width: 100%; padding:0; margin:0; background:#fff; padding-left: 2%;}
+.toggle-pdp li {list-style: none; float:left; padding-right: 15px; padding-left:15px; width: 35px; height: 35px;}
+.toggle-pdp li img {width:100%; height:auto; opacity: 0.85;}
+.toggle-pdp li span {position: absolute; width:100%; font-size: 11px; text-align: center; left:0; top:7px; font-family:'BrandonGrotesqueRegular';  opacity:0;}
+.toggle-pdp li span a {color:#111 !important; text-decoration: none !important;}
+.toggle-pdp li:hover span {opacity:1;}
+.toggle-pdp li:hover img {opacity:0.2;}
+.toggle-pdp li:hover span, .toggle-pdp li span, .toggle-pdp li, .toggle-pdp li:hover, .toggle-pdp li img, .toggle-pdp li:hover, .toggle-pdp li img:hover {transition: all 0.4s ease; -webkit-transition: all 0.4s ease; }
+.mactive {opacity: 1 !important;}
+.toggle-pdp li {position: relative; text-align: center; opacity: 0.4;}
+.toggle-pdp li img:hover {opacity:0.2;}
+
+.colortabs-layers {margin-top:10px;}
+select {
+    background: url('../images/icons/select-arrow.gif?jcb=1461784165') top right no-repeat #fff;
+    font-size: 12px;
+    height: 30px;
+    font-family: 'BrandonGrotesqueRegular' !important;
+    line-height: 17px;
+    padding: 5px 24px 5px 10px;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #DDD;
+    color: #666!important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.product-img-box {
+	    margin-top: 0px;
+    padding-bottom: 310px;
+    background: #fff;
+    padding-top: 30px;
+}
+
+.bottom {
+	
+	clear: both; margin-top: 75px; width:100%; float:left; text-align:center;
+	background-image: url('img/bottom2.jpg');
+	}

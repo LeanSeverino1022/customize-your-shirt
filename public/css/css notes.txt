@@ -1,0 +1,8 @@
+these css are just copied from the original monogram demo in http://everthread.com/tradeshow/ to quickly imitate the layout 
+
+1. bb2.css
+2. easy-responsive-tab.css
+3. monogram.css
+
+just added this stylesheet to override rules and created some new rules too.
+1. new_styles.css

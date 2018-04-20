@@ -1,0 +1,401 @@
+@font-face {
+	font-family:'GothamHTF-Bold';
+	src: url('fonts/GothamHTF-Bold_gdi.eot');
+	src: url('fonts/GothamHTF-Bold_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamHTF-Bold_gdi.woff') format('woff'),
+		url('fonts/GothamHTF-Bold_gdi.ttf') format('truetype'),
+		url('fonts/GothamHTF-Bold_gdi.svg#GothamHTF-Bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+	font-family:'GothamHTF-Light';
+	src: url('fonts/GothamHTF-Light_gdi.eot');
+	src: url('fonts/GothamHTF-Light_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamHTF-Light_gdi.woff') format('woff'),
+		url('fonts/GothamHTF-Light_gdi.ttf') format('truetype'),
+		url('fonts/GothamHTF-Light_gdi.svg#GothamHTF-Light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-00FE;
+}
+
+
+@font-face {
+	font-family:'GothamHTF-Book';
+	src: url('fonts/GothamHTF-Book_gdi.eot');
+	src: url('fonts/GothamHTF-Book_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/GothamHTF-Book_gdi.woff') format('woff'),
+		url('fonts/GothamHTF-Book_gdi.ttf') format('truetype'),
+		url('fonts/GothamHTF-Book_gdi.svg#GothamHTF-Book') format('svg');
+	font-weight: 500;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-00FE;
+}
+
+@font-face {
+    font-family: 'SentinelLight';
+    src: url('fonts/sentinel-light_0.eot');
+    
+src: url('fonts/sentinel-light_0.eot') format('embedded-opentype'),
+         
+url('fonts/sentinel-light_0.woff') format('woff'),
+         
+url('fonts/sentinel-light_0.ttf') format('truetype'),
+         url('fonts/sentinel-light_0.svg#SentinelLight') format('svg');
+}
+
+.colorPicker {float:left; clear: both; width: 80%; margin-top: 10px; margin-bottom: 10px;}
+fieldset {clear: both;}
+.ui-selectmenu-button span.ui-selectmenu-text {padding: 6px 1px 1px 6px !important;}
+
+
+#option_Monogram {width: 30% !important; margin-right: 20px !important;}
+
+.sectionTitle {
+	    float: left;
+    clear: both;
+    width: 75%;
+    font-family: 'GothamHTF-Book';
+    text-transform: none;
+    font-weight: 100;
+    padding-bottom: 10px;
+    padding-left: 3px;
+    letter-spacing: 0px;
+    font-size: 17px;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #222;
+}
+.sectionTitle strong {font-weight: 100; font-family: 'GothamHTF-Bold';}
+
+.monoOptionsRight {margin-top: -89px; position: relative; z-index: 9;}
+.colorPickerContain {float:left; clear: both; width: 100%;}
+
+@media (min-width:800px) {
+.product-img-box {max-width: 500px; margin-bottom: 120px;}
+
+}
+
+@media (min-width:1100px) {
+.product-img-box {max-width: 600px;}
+
+}
+
+#fontFamilyDrop-menu #ui-id-1 {font-family: 'Permanent Marker' !important;}
+#fontFamilyDrop-menu #ui-id-2 {font-family: 'Roboto' !important;}
+#fontFamilyDrop-menu #ui-id-3 {font-family: 'Gochi Hand' !important;}
+#fontFamilyDrop-menu #ui-id-4 {font-family: 'Indie Flower' !important;}
+#fontFamilyDrop-menu #ui-id-5 {font-family: 'Fredericka the Great' !important;}
+#fontFamilyDrop-menu #ui-id-6 {font-family: 'Black Ops On' !important;}
+#fontFamilyDrop-menu #ui-id-7 {font-family: 'Playball' !important;}
+#fontFamilyDrop-menu #ui-id-8 {font-family: 'Limelight' !important;}
+#fontFamilyDrop-menu #ui-id-9 {font-family: 'Molle' !important;}
+#fontFamilyDrop-menu #ui-id-10 {font-family: 'Crete Round' !important;}
+
+.bread {display:none;}
+.colortabs-layers, .resp-tab-content, .rrr2.large {display: none !important;}
+.love {padding-top: 100px !important;}
+.blend-stencil {position: absolute; left:173px; width: 170px; z-index: 1;  top: 150px;}
+.blend-stencil img {    width: 175px;
+    height: 175px;}
+
+
+.apron_thumbs {
+	    position: relative;
+    z-index: 100;
+    width: 100%;
+    cursor: pointer;
+    float: left;
+    clear: both;
+	
+}
+
+.apron_thumbs img {
+    width: 70px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    opacity: 0.5;
+}
+.apron_thumbs img, .apronActive {transition: all 0.4s ease; -webkit-transition: all 0.4s ease;}
+
+.apronActive {opacity: 1 !important;}
+.apron_thumbs img, .apron_thumbs img:hover {transition: all 0.4s ease; -webkit-transition: all 0.4s ease;}
+.apron_thumbs img:hover {opacity: 1;}
+
+.apron-shadow {
+    position: absolute;
+    z-index: 5;
+    mix-blend-mode: color-burn;
+	-webkit-mix-blend-mode: color-burn;
+    opacity: 0.17;
+}
+
+.apron-shadow2 {
+	    position: absolute;
+    z-index: 5;
+    mix-blend-mode: multiply;
+	-webkit-mix-blend-mode: multiply;
+    opacity: 0.1;
+}
+
+
+#option_Monogram, #option_font, #option_Stencil, #option_Fabric {float:left; clear: none; max-width: 49%;}
+#option_Monogram, #option_Stencil {margin-right: 2%;}
+.fabric-overlay {opacity: 0.15 !important; mix-blend-mode: overlay !important; -webkit-mix-blend-mode: overlay !important;}
+
+#stencilDrop-button {font-family: 'Roboto' !important;}
+
+#stencilDrop-menu .ui-menu-item {font-family: 'Roboto' !important; font-size: 13px; text-transform: none;}
+
+.bundle-option.form-group {min-width: 100%; max-width: 100%;}
+#MonoText {
+	font-size: 12px;
+    height: 30px;
+    font-family: 'Roboto' !important;
+	padding-left: 6px;
+    line-height: 17px;
+    padding: 5px 24px 5px 10px;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #DDD;
+    color: #666!important;
+}
+
+.buy {
+    margin-top: -110px !important;
+    position: relative;
+    z-index: 99;
+    margin-left: 0 !important;
+}
+
+.input-box {float:left; clear: both; width: 100%; }
+.input-box input, .input-box select {min-width:100%; margin-bottom:5px !important; }
+
+#letters {position: absolute; top: 100px; z-index: 9; width: 210px; text-align: center; color:#fff; letter-spacing:2px; font-size: 20px;left:150px; border:2px solid red;}
+
+.apron-outline {position: absolute; left:0; top:0; z-index: 99;}
+
+.badge {
+  left: 19.25%;
+  position: relative;
+  width: 400px;
+  border-radius: 50%;
+  transform: rotate(-32deg);
+}
+.badge h1 {color:#fff;}
+h1 span {
+  font-size: 26px;
+  font-family:'Permanent Marker';
+  text-align:center;
+  height: 200px;
+  
+  position: absolute;
+  width: 20px;
+  left: 0;
+  top: 0;
+  transform-origin: bottom center;
+}
+
+.char1 {
+  transform: rotate(6deg);
+}
+
+.char2 {
+  transform: rotate(12deg);
+}
+
+.char3 {
+  transform: rotate(18deg);
+}
+
+.char4 {
+  transform: rotate(24deg);
+}
+
+.char5 {
+  transform: rotate(30deg);
+}
+
+.char6 {
+  transform: rotate(36deg);
+}
+
+.char7 {
+  transform: rotate(42deg);
+}
+
+.char8 {
+  transform: rotate(48deg);
+}
+
+.char9 {
+  transform: rotate(54deg);
+}
+
+.char10 {
+  transform: rotate(60deg);
+}
+
+.char11 {
+  transform: rotate(66deg);
+}
+
+.char12 {
+  transform: rotate(72deg);
+}
+
+.char13 {
+  transform: rotate(78deg);
+}
+
+.char14 {
+  transform: rotate(84deg);
+}
+
+.char15 {
+  transform: rotate(90deg);
+}
+
+.char16 {
+  transform: rotate(96deg);
+}
+
+.char17 {
+  transform: rotate(102deg);
+}
+
+.char18 {
+  transform: rotate(108deg);
+}
+
+.char19 {
+  transform: rotate(114deg);
+}
+
+.char20 {
+  transform: rotate(120deg);
+}
+
+.char21 {
+  transform: rotate(126deg);
+}
+
+.char22 {
+  transform: rotate(132deg);
+}
+
+.char23 {
+  transform: rotate(138deg);
+}
+
+
+/* Custom dropdowns with images */
+
+ h2 {
+      margin: 30px 0 0 0
+    }
+    fieldset {
+      border: 0;
+    }
+    label {
+      display: block;
+    }
+    select {
+      width: 200px;
+    }
+	
+	
+	h6 {font-family: 'Futura-Heavy'; font-weight: 100; font-size: 17px; color:#444;  margin-bottom: 10px; margin-top: 15px; width:100%; clear: both; float:left; }
+#fontFamilyDrop-button {margin-top: -6px;  }
+#fontFamilyDrop-button .ui-selectmenu-text {line-height: 1.1em; font-size: 13px; font-family: 'Roboto';}
+
+
+#fontFamilyDrop-menu .ui-menu-item { padding-top: 10px !important; padding-bottom: 0 !important; font-weight: 100; font-size: 22px;}
+
+
+
+	.monoOptionsRight fieldset {float:left; margin-left: -12px;}
+	#select_364 {margin-top: 6px;}
+	#fontFamilyDrop-menu .ui-icon.avatar {display: none !important;}
+#fontFamilyDrop-menu .ui-menu-item {padding-left: 20px !important;}
+	.ui-selectmenu-button {
+		
+		    background: url('../images/icons/select-arrow.gif?jcb=1461784165') top right no-repeat #fff;
+ font-size: 12px;
+    height: 13px;
+    font-family: 'Futura-Heavy' !important;
+    line-height: 14px;
+    padding: 0px 24px 14px 4px;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #DDD;
+    float: left;
+    color: #666!important;
+    border-radius: 0 !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	
+	}
+	
+	
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {background: #fff !important;}
+	#colortabs {z-index: 1 !important;}
+	.ui-selectmenu-menu .ui-menu {position: relative; z-index: 20;}
+ 
+    /* select with custom icons */
+    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item {
+      padding: 0.5em 0 0.5em 3em;
+    }
+    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item .ui-icon {
+      height: 24px;
+      width: 24px;
+      top: 0.1em;
+    }
+	
+	.ui-menu .ui-menu-item {min-height: 30px; }
+	.ui-menu-icons .ui-menu-item {
+	padding-left: 59px;
+    padding-top: 20px;
+    font-family: 'Futura-Heavy';
+    padding-bottom: 10px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+    .ui-icon.video {
+      background: url("images/24-video-square.png") 0 0 no-repeat;
+    }
+    .ui-icon.podcast {
+      background: url("images/24-podcast-square.png") 0 0 no-repeat;
+    }
+    .ui-icon.rss {
+      background: url("images/24-rss-square.png") 0 0 no-repeat;
+    }
+ 
+    /* select with CSS avatar icons */
+    option.avatar {
+      background-repeat: no-repeat !important;
+      padding-left: 20px;
+    }
+	
+	.ui-menu .ui-icon { width: 45px !important; height: 45px !important; }
+    .avatar .ui-icon {
+		
+      background-size: 100%;
+      background-position: left top;
+    }
+	/* Custom dropdowns with images code end */
+	
+.monoOptionsRight {float:left; width: 47%; margin-bottom: 100px; }
