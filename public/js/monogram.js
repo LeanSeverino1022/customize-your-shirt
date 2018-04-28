@@ -14,7 +14,21 @@ let $stencilImg = $('#stencilImg');
 let currentFont = null;
 let currentFontColor = null;
 
+let BLEND_MODE = {
+    'darken': 1,
+    'lighten': 2
+}
+
+let stencilBlendMode = BLEND_MODE.lighten;
+
+
 $(document).ready(function () {
+
+    $(".nav-tabs a").click(function () {
+        $(this).tab('show');
+    });
+
+    updateStencilImageByBlendMode();
 
     //set the apron text arc
 	$apronTextElement.show().arctext({radius: 180});
@@ -47,10 +61,10 @@ function setupOptionsEventHandlers(){
 }
 
 function updateText(){
-    $('.badge.overlay h2').remove()
-    $('.badge.overlay').append('<h2 id="curve-badge"></h2>');
-    $('.badge.overlay h2').text($("#MonoText").val().toUpperCase());
-    $('.badge.overlay h2').arctext({ radius: 180 });
+    $('.badge-text.overlay h2').remove()
+    $('.badge-text.overlay').append('<h2 id="curve-badge"></h2>');
+    $('.badge-text.overlay h2').text($("#MonoText").val().toUpperCase());
+    $('.badge-text.overlay h2').arctext({ radius: 180 });
     $('#curve-badge').css('font-family',currentFont);
     $('#curve-badge').css('color',currentFontColor);  
 }
@@ -84,7 +98,9 @@ function updateStencilFigure(){
         default:
             break;
     }
-    document.getElementById('stencilImg').src
+
+    updateStencilImageByBlendMode();
+    
 }
 
 function updateFontFamily(){
@@ -129,14 +145,48 @@ function updateFontColor(e){
 
     currentFontColor = $(e.target).data().color;
 
-    $('.badge #curve-badge').css('color',currentFontColor);
+    $('.badge-text #curve-badge').css('color',currentFontColor);
 }
 
 function updateStencilColor(e){
     var selectedColor = $(e.target).data().color;
-    $stencilImg.css('filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
-    $stencilImg.css('-webkit-filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
+    // $stencilImg.css('filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
+    // $stencilImg.css('-webkit-filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
+
+    $("#stencil").css('background-color', selectedColor);
+
+    updateStencilBlendMode(e.target);
+}
+
+/*because of how mix-blend-mode in css works, sometimes, images don't render as expected. this is why this is useful */
+function updateStencilBlendMode( stencilOption ){
+
+    if($(stencilOption).hasClass('dark')){
+        stencilBlendMode = BLEND_MODE.darken;
+    } else {
+        stencilBlendMode = BLEND_MODE.lighten;        
+    }
+
+    updateStencilImageByBlendMode();
+}
+
+function updateStencilImageByBlendMode() {
+    if(stencilBlendMode === BLEND_MODE.darken) {
+        $('#stencil').css('mix-blend-mode', 'darken');
+        $stencilImg.get(0).src=`public/images/stencil${$stencilSelect.val()}_dark.png`;
+
+    }
+    else {
+        $stencilImg.get(0).src=`public/images/stencil${$stencilSelect.val()}.png`;
+        $('#stencil').css('mix-blend-mode', 'lighten');
+
+    }
 }
 
 
-  
+// var val = $stencilSelect.val();
+// var image = $stencilImg.get(0);
+
+// switch (parseInt(val)) {
+//     case 1:
+//         image.src='public/images/stencil1.png'
