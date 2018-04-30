@@ -60,11 +60,7 @@ function setupOptionsEventHandlers(){
 // }
 
 function updateText(){
-    // $('.badge-texts text').remove()
-    // $('.badge-texts').append('<h2 id="curve-badge"></h2>');
-    // $('.badge-texts text').text($("#MonoText").val().toUpperCase());
     $('textPath').text($("#MonoText").val().toUpperCase());
-    // $('.badge-texts text').arctext({ radius: 180 });
     $('#curve-badge').css('font-family',currentFont);
     $('#curve-badge').css('color',currentFontColor);  
 }
@@ -145,6 +141,9 @@ function updateFontColor(e){
     currentFontColor = $(e.target).data().color;
 
     $('.badge-text2 text').css('fill',currentFontColor);
+
+    //update mix-blend-mode property 
+    switchBlendMode(e.target);   
 }
 
 function updateStencilColor(e){
@@ -154,6 +153,20 @@ function updateStencilColor(e){
     $stencilImg.css('-webkit-filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
 }
 
+function switchBlendMode( selectedOption ){
+    if( $( selectedOption ).hasClass('overlay')) {
+    
+        if($(".apron-background img").css('mix-blend-mode') !== 'overlay') {
+            $(".badge-text2").css('mix-blend-mode', 'overlay');
+        }   
+    } 
+    else /* option does not have class overlay */
+    {
+        if ($(".badge-text2").css('mix-blend-mode') === 'overlay' ) {
+            $(".badge-text2").css('mix-blend-mode', 'screen')
+        }
+    }
+}
 
 
 
