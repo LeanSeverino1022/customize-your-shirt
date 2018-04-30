@@ -14,11 +14,13 @@
   }
   .badge-text h2 {
       color:#e7967f;
-      font-size: 36px !important; 
+      /* font-size: 36px !important;  */
       text-align: center; 
       min-width: 20px;  
-      font-weight: bold;
+      opacity: .5;
+      /* font-weight: bold; */
     }
+
 
   .apron_thumbs img:hover {
     transform: scale(1.1);
@@ -197,27 +199,26 @@ img#product {
 
 .item-color-option.active img{
     border-color:#333;
-    
 }
 
 .item-color-option img:hover {
     transform: scale(1.15);
-    
-    
 }
 
 #stencil {
-    mix-blend-mode: color-burn;
+    mix-blend-mode: overlay;
 }
 
-.badge-text {
-    font-weight: 400;
-    
+.badge-text2 {
+    font-weight: bold;    
     font-family: "Garamond";
-    mix-blend-mode: multiply;
-    /* mix-blend-mode: normal !important; */
+    mix-blend-mode: screen;
+    opacity: .6;
 }
 
-.overlay {
-    /* mix-blend-mode: normal;  */
-}
+.badge-text2 text {
+    fill:#e7967f;
+    text-align: center; 
+    min-width: 20px;  
+    opacity: .5;
+  }

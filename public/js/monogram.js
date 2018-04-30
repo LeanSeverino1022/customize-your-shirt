@@ -14,12 +14,6 @@ let $stencilImg = $('#stencilImg');
 let currentFont = null;
 let currentFontColor = null;
 
-let BLEND_MODE = {
-    'darken': 1,
-    'lighten': 2
-}
-
-let stencilBlendMode = BLEND_MODE.lighten;
 
 
 $(document).ready(function () {
@@ -29,7 +23,7 @@ $(document).ready(function () {
     });
 
     //set the apron text arc
-	$apronTextElement.show().arctext({radius: 180});
+	$apronTextElement.show().arctext({radius: 230});
 
     initializeValues();
     setupOptionsEventHandlers();
@@ -48,21 +42,29 @@ function initializeValues(){
     EVENT HANDLERS
 **********************************/
 function setupOptionsEventHandlers(){
-
     $apronTextInput.on('keyup', updateText);
     $apronThumbs.on("click", updateApronColor);
     $stencilSelect.on("selectmenuchange", updateStencilFigure); //jquery ui selectmenu event
     $fontSelect.on("selectmenuchange", updateFontFamily); //jquery ui selectmenu event
     $optionTextColor.on('click', '.color-option', updateFontColor );
     $optionStencilColor.on('click', '.color-option2', updateStencilColor);
-    
 }
 
+// function updateText(){
+//     $('.badge-text h2').remove()
+//     $('.badge-text').append('<h2 id="curve-badge"></h2>');
+//     $('.badge-text h2').text($("#MonoText").val().toUpperCase());
+//     $('.badge-text h2').arctext({ radius: 180 });
+//     $('#curve-badge').css('font-family',currentFont);
+//     $('#curve-badge').css('color',currentFontColor);  
+// }
+
 function updateText(){
-    $('.badge-text.overlay h2').remove()
-    $('.badge-text.overlay').append('<h2 id="curve-badge"></h2>');
-    $('.badge-text.overlay h2').text($("#MonoText").val().toUpperCase());
-    $('.badge-text.overlay h2').arctext({ radius: 180 });
+    // $('.badge-texts text').remove()
+    // $('.badge-texts').append('<h2 id="curve-badge"></h2>');
+    // $('.badge-texts text').text($("#MonoText").val().toUpperCase());
+    $('textPath').text($("#MonoText").val().toUpperCase());
+    // $('.badge-texts text').arctext({ radius: 180 });
     $('#curve-badge').css('font-family',currentFont);
     $('#curve-badge').css('color',currentFontColor);  
 }
@@ -142,12 +144,13 @@ function updateFontColor(e){
 
     currentFontColor = $(e.target).data().color;
 
-    $('.badge-text #curve-badge').css('color',currentFontColor);
+    $('.badge-text2 text').css('fill',currentFontColor);
 }
 
 function updateStencilColor(e){
     var selectedColor = $(e.target).data().color;
     $stencilImg.css('filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
+    // $stencilImg.css('background-color', selectedColor);
     $stencilImg.css('-webkit-filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
 }
 
