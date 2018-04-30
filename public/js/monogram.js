@@ -28,8 +28,6 @@ $(document).ready(function () {
         $(this).tab('show');
     });
 
-    updateStencilImageByBlendMode();
-
     //set the apron text arc
 	$apronTextElement.show().arctext({radius: 180});
 
@@ -99,7 +97,6 @@ function updateStencilFigure(){
             break;
     }
 
-    updateStencilImageByBlendMode();
     
 }
 
@@ -150,43 +147,10 @@ function updateFontColor(e){
 
 function updateStencilColor(e){
     var selectedColor = $(e.target).data().color;
-    // $stencilImg.css('filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
-    // $stencilImg.css('-webkit-filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
-
-    $("#stencil").css('background-color', selectedColor);
-
-    updateStencilBlendMode(e.target);
-}
-
-/*because of how mix-blend-mode in css works, sometimes, images don't render as expected. this is why this is useful */
-function updateStencilBlendMode( stencilOption ){
-
-    if($(stencilOption).hasClass('dark')){
-        stencilBlendMode = BLEND_MODE.darken;
-    } else {
-        stencilBlendMode = BLEND_MODE.lighten;        
-    }
-
-    updateStencilImageByBlendMode();
-}
-
-function updateStencilImageByBlendMode() {
-    if(stencilBlendMode === BLEND_MODE.darken) {
-        $('#stencil').css('mix-blend-mode', 'darken');
-        $stencilImg.get(0).src=`public/images/stencil${$stencilSelect.val()}_dark.png`;
-
-    }
-    else {
-        $stencilImg.get(0).src=`public/images/stencil${$stencilSelect.val()}.png`;
-        $('#stencil').css('mix-blend-mode', 'lighten');
-
-    }
+    $stencilImg.css('filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
+    $stencilImg.css('-webkit-filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
 }
 
 
-// var val = $stencilSelect.val();
-// var image = $stencilImg.get(0);
 
-// switch (parseInt(val)) {
-//     case 1:
-//         image.src='public/images/stencil1.png'
+

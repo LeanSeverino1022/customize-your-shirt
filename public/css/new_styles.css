@@ -13,10 +13,11 @@
     left: 70px;
   }
   .badge-text h2 {
-      color:#dedbd4;
-      font-size: 28px !important; 
+      color:#e7967f;
+      font-size: 36px !important; 
       text-align: center; 
       min-width: 20px;  
+      font-weight: bold;
     }
 
   .apron_thumbs img:hover {
@@ -206,11 +207,15 @@ img#product {
 }
 
 #stencil {
-    mix-blend-mode: lighten;
+    mix-blend-mode: color-burn;
 }
 
 .badge-text {
-    mix-blend-mode: normal !important;
+    font-weight: 400;
+    
+    font-family: "Garamond";
+    mix-blend-mode: multiply;
+    /* mix-blend-mode: normal !important; */
 }
 
 .overlay {
