@@ -163,7 +163,7 @@ function switchBlendMode( selectedOption ){
     else /* option does not have class overlay */
     {
         if ($(".badge-text2").css('mix-blend-mode') === 'overlay' ) {
-            $(".badge-text2").css('mix-blend-mode', 'screen')
+            $(".badge-text2").css('mix-blend-mode', 'exclusion')
         }
     }
 }

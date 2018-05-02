@@ -212,13 +212,14 @@ img#product {
 .badge-text2 {
     font-weight: bold;    
     font-family: "Garamond";
-    mix-blend-mode: screen;
-    opacity: .6;
+    mix-blend-mode: exclusion;
+    opacity: .4;
 }
 
 .badge-text2 text {
     fill:#e7967f;
     text-align: center; 
     min-width: 20px;  
-    opacity: .5;
+   
+
   }
