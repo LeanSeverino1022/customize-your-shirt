@@ -14,6 +14,8 @@ let $stencilImg = $('#stencilImg');
 let currentFont = null;
 let currentFontColor = null;
 
+//dark and light for now
+let currentApronColor =  'light'
 
 
 $(document).ready(function () {
@@ -66,7 +68,18 @@ function updateText(){
 }
 
 function updateApronColor(e){
+
+    if($(e.target).hasClass('dark')) {
+        currentApronColor = 'dark';
+    }
+    if($(e.target).hasClass('light')) {
+        currentApronColor = 'light';
+    }
+
+
     $(".apron-background img").attr("src", $(e.target).attr("src"));
+
+    updateApronTextOpacity();
 }
 
 function updateStencilFigure(){
@@ -154,6 +167,7 @@ function updateStencilColor(e){
 }
 
 function switchBlendMode( selectedOption ){
+    
     if( $( selectedOption ).hasClass('overlay')) {
     
         if($(".apron-background img").css('mix-blend-mode') !== 'overlay') {
@@ -168,5 +182,14 @@ function switchBlendMode( selectedOption ){
     }
 }
 
+
+function updateApronTextOpacity(){
+    if (currentApronColor === 'dark'){
+        $('.badge-text2').css('opacity', .1);
+    }
+    else if (currentApronColor === 'light'){
+        $('.badge-text2').css('opacity', .35);
+    }
+}
 
 
