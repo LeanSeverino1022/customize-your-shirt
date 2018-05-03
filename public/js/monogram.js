@@ -188,7 +188,7 @@ function updateApronTextOpacity(){
         $('.badge-text2').css('opacity', .1);
     }
     else if (currentApronColor === 'light'){
-        $('.badge-text2').css('opacity', .35);
+        $('.badge-text2').css('opacity', .57);
     }
 }
 
