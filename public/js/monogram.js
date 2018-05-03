@@ -146,7 +146,7 @@ function updateFontFamily(){
             break;
     }
 
-    $('#curve-badge').css('font-family',currentFont);  
+    $('.badge-text2 text').css('font-family',currentFont);  
 }
 
 function updateFontColor(e){
@@ -154,6 +154,10 @@ function updateFontColor(e){
     currentFontColor = $(e.target).data().color;
 
     $('.badge-text2 text').css('fill',currentFontColor);
+
+    // $('.badge-text2 text').css('filter', `opacity(0.5) drop-shadow(${currentFontColor} 0px 0px 0px)`);
+    // $stencilImg.css('background-color', selectedColor);
+    // $('.badge-text2 text').css('-webkit-filter', `opacity(0.5) drop-shadow(${currentFontColor} 0px 0px 0px)`);
 
     //update mix-blend-mode property 
     switchBlendMode(e.target);   
@@ -185,7 +189,7 @@ function switchBlendMode( selectedOption ){
 
 function updateApronTextOpacity(){
     if (currentApronColor === 'dark'){
-        $('.badge-text2').css('opacity', .1);
+        $('.badge-text2').css('opacity', .22);
     }
     else if (currentApronColor === 'light'){
         $('.badge-text2').css('opacity', .57);
