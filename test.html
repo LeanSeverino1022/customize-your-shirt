@@ -1,0 +1,369 @@
+<!-- saved from url=(0066)https://everthread.com/tradeshow/demos-et-2016/et2016/monogram.php -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="http://www.everthread.com/skin/frontend/base/default/favicon.ico" rel="shortcut icon">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- BOOTSTRAP -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title>EverThread API Demo: Monograms v1</title>
+
+
+    <link rel="stylesheet" type="text/css" href="public/css/easy-responsive-tabs.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js" integrity="sha256-xI/qyl9vpwWFOXz7+x/9WkG5j/SVnSw21viy8fWwbeE="
+        crossorigin="anonymous"></script>
+
+    <!-- copied css from original source of the demo http://everthread.com/tradeshow/-->
+    <link rel="stylesheet" type="text/css" href="public/css/bb2.css">
+    <link rel="stylesheet" type="text/css" href="public/css/monogram.css">
+    <link rel="stylesheet" type="text/css" href="public/css/new_styles.css">
+
+    <style>
+        .product-img-box {
+            padding-bottom: 50px;
+            /* border: red 2px solid */
+        }
+
+        h2 span {
+            /* border: red 1px solid; */
+            font-weight: bold;  
+            font-size: 26px;
+        }
+
+        fieldset {
+            border: 0;
+        }
+
+        label {
+            display: block;
+            margin: 30px 0 0 0;
+        }
+
+        .overflow {
+            height: 200px;
+        }
+
+        .ui-menu-item {
+            padding-left: 59px;
+            padding-top: 20px;
+            /* font-family: Futura-Heavy; */
+            padding-bottom: 10px;
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+
+        .ui-menu .ui-menu-item {
+            min-height: 30px;
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <div id="header">
+        <div class="container">
+            <div id="storeLogo">
+                <a href="http://everthreadsandbox.com">
+                    <img src="public/images/store_logo.png">
+                </a>
+            </div>
+            <div id="headerShortcuts" class="ui-buttonset">
+                <a href="http://everthreadsandbox.com/shopping_cart.php">
+                    <span>CART CONTENTS</span>
+                </a>
+                <a href="http://everthreadsandbox.com/checkout_shipping.php">
+                    <span>CHECKOUT</span>
+                </a>
+                <a href="http://everthreadsandbox.com/account.php">
+                    <span>MY ACCOUNT</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- slider wrapper -->
+    <div class="slider-wrapper">
+        <label for="opacity-slider">Opacity</label>
+        <input type="range" min="0" max="1" value="1" id="opacity-slider" step="0.01">
+        <output for="opacity-slider" id="slider-value">1</output>
+    </div>
+    
+   
+    <form action="" style="margin: 50px 0 0 50px; position: fixed;" >
+            <h5>mix-blend-mode value</h5>
+        <input type="radio" name="mix_blend_mode" value="inherit"> inherit <br>
+        <input type="radio" name="mix_blend_mode" value="unset"> unset <br>
+        <input type="radio" name="mix_blend_mode" value="normal"> normal <br>
+        <input type="radio" name="mix_blend_mode" value="multiply"> multiply<br>
+        <input type="radio" name="mix_blend_mode" value="screen"> screen<br>
+        <input type="radio" name="mix_blend_mode" value="overlay"> overlay<br>
+        <input type="radio" name="mix_blend_mode" value="darken"> darken<br>
+        <input type="radio" name="mix_blend_mode" value="lighten"> lighten<br>
+        <input type="radio" name="mix_blend_mode" value="color-dodge"> color-dodge<br>
+        <input type="radio" name="mix_blend_mode" value="color-burn"> color-burn<br>
+        <input type="radio" name="mix_blend_mode" value="hard-light"> hard-light<br>
+        <input type="radio" name="mix_blend_mode" value="soft-light"> soft-light<br>
+        <input type="radio" name="mix_blend_mode" value="difference"> difference<br>
+        <input type="radio" name="mix_blend_mode" value="exclusion"> exclusion<br>
+        <input type="radio" name="mix_blend_mode" value="hue"> hue<br>
+        <input type="radio" name="mix_blend_mode" value="saturation"> saturation<br>
+        <input type="radio" name="mix_blend_mode" value="color"> color<br>
+        <input type="radio" name="mix_blend_mode" value="luminosity"> luminosity<br>
+      </form>
+      
+
+    <div class="container">
+
+        <!-- <div class="mtitle">
+            <h1>Monogram Apron</h1>
+            <div class="product-number">Item# 10396934</div>
+        </div> -->
+
+        <div class="row">
+               
+            <div class="product-view col-md-6 col-md-offset-1">
+
+                <div class="product-essential">
+
+                    <div class="product-img-box">
+
+                        <div id="rrr-contain">
+                            <img src="public/images/apron-outline.png" class="apron-outline">
+                            <div id="pillow" class="fshow-apron" style="background-image: url('public/images/apron-outline.png');"></div>
+
+
+                            <!-- <div class="fabric-overlay" style="background-image: url(&#39;clever/images/fabric-overlay.png&#39;);"></div> -->
+
+
+                            <div id="pillow1-contain" class="pillow-contain-show">
+
+                                <div class="apron-shadow">
+                                    <img c>
+                                </div>
+                                <div class="apron-shadow2">
+                                    <img src="public/images/apron-shadow.png">
+                                </div>
+
+                                <!-- <div id="letters" class="overlay blend-letters"><h1>BON APETIT</h1></div> -->
+
+                                <!-- <div class="badge-text blend-letters"> -->
+                                    <!-- <h2 id="curve-badge">BSDST</h2> -->
+                                <!-- </div> -->
+                                
+                                <svg class="badge-text2" viewBox="0 0 500 500" style="position: relative; top: -150px; left: 5.8px;">
+                                    <!-- <path id="curve" fill="transparent" d="M 130 250 Q 250 200 300 250" /> -->
+                                    <!-- <path id="curve" fill="transparent" d="M 130 240 C 300 200 260 230 330 250 " /> -->
+                                    <path id="curve" fill="transparent" d="M 130 240 L 160 240 C 300 210 270 230 320 240 L 330 240" /><!--  stroke="red" -->
+                                    <!-- <path id="curve" fill="transparent" d="M 100 300 Q 150 300 150 300 Q 300 250 350 300 Q 375 300 400 300 " /> -->
+                                    
+                                    <text width="500" style="text-anchor: middle;">
+                                      <textPath xlink:href="#curve" style="font-size: 24px; letter-spacing: 1px" startOffset="50%">
+                                        BON APPETIT
+                                      </textPath>
+                                    </text>
+                                  </svg>
+                                
+                                <div id="stencil" class="blend-stencil" style="opacity: 1;">
+                                    <img id="stencilImg" src="public/images/stencil1.png" style="filter: opacity(0.5) drop-shadow(rgb(231, 150, 127) 0px 0px 0px);">
+                                </div>
+
+
+                            </div>
+                            <div class="apron-background">
+                                <img src="public/images/apron.jpg">
+                            </div>
+                            <div class="rrr2 large" id="normal-repeat"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    
+
+
+            <!-- <div class="color-toggle-contain">
+
+                <div style="display:none;">
+
+                    <div class="ttt">Customize</div>
+                    <div class="color-toggle">
+                        <div class="color-toggle-1 color-toggle-item" style="background: #b9e3f8; "></div>
+                        <div class="color-toggle-2 color-toggle-item" style="background: #daf2f9; "></div>
+                        <div class="color-toggle-3 color-toggle-item" style="background: #cfeadd; "></div>
+                        <div class="color-toggle-4 color-toggle-item" style="background: #c0e5dd; "></div>
+                        <div class="color-toggle-text">Change these colors</div>
+                    </div>
+                </div>
+
+            </div> -->
+
+            <div class="col-md-5"> <!-- opions view -->
+                <img id="love" class="favorite-heart" src="public/images/love1.png">
+                <h2>Monogram Apron</h2>
+                <br>
+                <div class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin rhoncus vestibulum diam ac semper. Sed ullamcorper porttitor
+                    dignissim. 
+                </div>
+                <br>
+                <br>
+
+                <div class="tab-panel">
+                    <ul class="nav nav-tabs flex-container">
+                        <li class="active">
+                            <a href="#apron_color">Color</a>
+                        </li>
+                        <li>
+                            <a href="#apron_text">Text</a>
+                        </li>
+                
+                        <li>
+                            <a href="#apron_stencil">Stencil</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                       
+                            
+                        <div id="apron_color" class="tab-pane fade in active">
+                                <br>
+                                <br>
+                            <div class="apron_thumbs">
+                                <img id="apron_thumb_1" class="apronActive light" src="public/images/apron.jpg">
+                                <img id="apron_thumb_2" class="dark" src="public/images/apron2.jpg">
+                            </div>
+                    
+                        </div>
+                        <div id="apron_text" class="tab-pane fade">
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="input-box col-sm-6">
+                                    <input id="MonoText" type="text" placeholder="Apron Text" maxlength="11">
+                                </div>
+                                
+                                <div class="input-box col-sm-6">
+                                
+                                    <fieldset>
+                                
+                                        <select name="fontFamilyDrop" id="fontFamilyDrop" style="display: none;">
+                                            <option value="font1" data-class="avatar">Font 1</option>
+                                            <option value="font2" data-class="avatar">Font 2</option>
+                                            <option value="font3" data-class="avatar">Font 3</option>
+                                            <option value="font4" data-class="avatar">Font 4</option>
+                                            <option value="font5" data-class="avatar">Font 5</option>
+                                        </select>
+                                
+                                    </fieldset>
+                                
+                                </div>
+
+                            </div>
+                            <br>
+                            <br>
+                          
+                            <div id="font-color-picker">
+                            
+                                <div class="color-option" style="background: #e7967f;" data-color="#e7967f"></div>
+                                <div class="color-option overlay" style="background: #0f0f0f;" data-color="#0f0f0f"></div>
+                                <div class="color-option" style="background: #98bdfe;" data-color="#98bdfe"></div>
+                                <div class="color-option" style="background: #93eee5;" data-color="#93eee5"></div>
+                                <div class="color-option" style="background: #fdf7bd;" data-color="#fdf7bd"></div>
+                                <div class="color-option" style="background: #fba057;" data-color="#fba057"></div>
+                                <div class="color-option" style="background: #35e7c3;" data-color="#35e7c3"></div>
+                                <div class="color-option" style="background: #ffbdcf;" data-color="#ffbdcf"></div>
+                                <div class="color-option" style="background: #DC5D61;" data-color="#DC5D61"></div>
+                                <div class="color-option" style="background: #F6624C;" data-color="#F6624C"></div>
+                                <div class="color-option" style="background: #00AFAC;" data-color="#00AFAC"></div>
+                            
+                                <!-- <div style="clear:both;"></div> -->
+                            
+                                <div class="color-option" style="background: #91B54D;" data-color="#91B54D"></div>
+                                <div class="color-option" style="background: #E9A23B;" data-color="#E9A23B"></div>
+                                <div class="color-option" style="background: #CDAA7F;" data-color="#CDAA7F"></div>
+                                <div class="color-option" style="background: #E8E1C7;" data-color="#E8E1C7"></div>
+                                <div class="color-option" style="background: #594440;" data-color="#594440"></div>
+                                <div class="color-option" style="background: #774B3A;" data-color="#774B3A"></div>
+                                <div class="color-option" style="background: #669eba;" data-color="#669eba"></div>
+                                <div class="color-option" style="background: #936993;" data-color="#936993"></div>
+                                <div class="color-option" style="background: #dedbd4;" data-color="#dedbd4"></div>
+                                <div class="color-option" style="background: #fafdae;" data-color="#fafdae"></div>
+                                <div class="color-option" style="background: #96d7cc;" data-color="#96d7cc"></div>
+                            </div>
+                    
+                        </div>
+                        <div id="apron_stencil" class="tab-pane fade">
+                            <br><br>
+                                
+                            <fieldset>
+                        
+                                <select name="stencilDrop" id="stencilDrop" style="display: none;">
+                                    <option value="1" data-class="avatar">Roosters</option>
+                                    <option value="2" data-class="avatar">Corkscrew</option>
+                                    <option value="3" data-class="avatar">Cow</option>
+                                    <option value="4" data-class="avatar">Hamburger</option>
+                                    <option value="5" data-class="avatar">BBQ</option>
+                                </select>
+                        
+                            </fieldset>
+                            <br>
+                            <div id="stencil-color-picker">
+                        
+                                <div class="color-option2" style="background: #e7967f;" data-color="#e7967f"></div>
+                                <div class="color-option2 dark" style="background: #0f0f0f;" data-color="#000"></div>
+                                <div class="color-option2" style="background: #98bdfe;" data-color="#98bdfe"></div>
+                                <div class="color-option2" style="background: #93eee5;" data-color="#93eee5"></div>
+                                <div class="color-option2" style="background: #fdf7bd;" data-color="#fdf7bd"></div>
+                                <div class="color-option2" style="background: #fba057;" data-color="#fba057"></div>
+                                <div class="color-option2" style="background: #35e7c3;" data-color="#35e7c3"></div>
+                                <div class="color-option2" style="background: #ffbdcf;" data-color="#ffbdcf"></div>
+                                <div class="color-option2" style="background: #DC5D61;" data-color="#DC5D61"></div>
+                                <div class="color-option2" style="background: #F6624C;" data-color="#F6624C"></div>
+                                <div class="color-option2" style="background: #00AFAC;" data-color="#00AFAC"></div>
+                        
+                                <!-- <div style="clear:both;"></div> -->
+                        
+                                <div class="color-option2" style="background: #91B54D;" data-color="#91B54D"></div>
+                                <div class="color-option2" style="background: #E9A23B;" data-color="#E9A23B"></div>
+                                <div class="color-option2" style="background: #CDAA7F;" data-color="#CDAA7F"></div>
+                                <div class="color-option2" style="background: #E8E1C7;" data-color="#E8E1C7"></div>
+                                <div class="color-option2 dark" style="background: #594440;" data-color="#594440"></div>
+                                <div class="color-option2 dark" style="background: #774B3A;" data-color="#774B3A"></div>
+                                <div class="color-option2" style="background: #669eba;" data-color="#669eba"></div>
+                                <div class="color-option2" style="background: #936993;" data-color="#936993"></div>
+                                <div class="color-option2" style="background: #dedbd4;" data-color="#dedbd4"></div>
+                                <div class="color-option2" style="background: #fafdae;" data-color="#fafdae"></div>
+                                <div class="color-option2" style="background: #96d7cc;" data-color="#96d7cc"></div>
+                            </div>
+                        
+                            </div>
+                    
+                    </div>
+                </div>
+
+                <div class="bundle-option form-group">
+
+                </div>
+            </div>
+        </div> <!-- row -->
+    </div>
+    
+    <script src="public/js/arctext.js"></script>
+    <script src="public/js/monogram_debug.js"></script>
+</body>
+
+</html>
