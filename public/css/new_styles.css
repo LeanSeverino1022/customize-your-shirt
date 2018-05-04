@@ -213,7 +213,7 @@ img#product {
     /* font-weight: bold;     */
     font-family: "Garamond";
     mix-blend-mode: screen;
-    opacity: .25;
+    opacity: .30;
 }
 
 .badge-text2 text {
@@ -221,6 +221,7 @@ img#product {
     text-align: center; 
     min-width: 20px;  
     text-shadow: 0 0 9px #e7967f;
+    font-family: "Special Elite", cursive;
  }
 
  .slider-wrapper {
@@ -234,3 +235,41 @@ img#product {
     border-radius: 0 0 10px;
     color: #ddd;
   }
+
+
+  /* fonts */
+
+  /* waterlily src: https://freedesignresources.net/waterlily-free-font/ */
+  @font-face {
+    font-family: waterLily;
+    src: url('../apron_font/Waterlily_Script.otf') format("opentype"), 
+         url('../apron_font/Waterlily_Script.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: KaushanScript-Regular;
+    src: url('../apron_font/KaushanScript-Regular.otf') format("opentype"), 
+         url('../apron_font/KaushanScript-Regular.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: Glamor-Regular;
+    src: url('../apron_font/Glamor-Regular.otf') format("opentype"), 
+         url('../apron_font/Glamor-Regular.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: Nickainley;
+    src: url('../apron_font/Nickainley.otf') format("opentype"), 
+         url('../apron_font/Nickainley.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: FrederickatheGreat;
+    src: url('../apron_font/FrederickatheGreat-Regular.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: mufferaw_rg;
+    src: url('../apron_font/mufferaw_rg.ttf') format('truetype'); 
+}

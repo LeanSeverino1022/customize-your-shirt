@@ -11,8 +11,15 @@ let $optionTextColor = $('#font-color-picker');
 let $optionStencilColor = $('#stencil-color-picker');
 let $stencilImg = $('#stencilImg');
 
+// default settings
+
 let currentFont = null;
+let currentFontSize = null;
 let currentFontColor = null;
+let currentFontOpacity = null;
+
+
+
 
 //dark and light for now
 let currentApronColor =  'light'
@@ -120,35 +127,35 @@ function updateFontFamily(){
     
     switch(val) {
         case "font1":
-            currentFont = "GothamHTF-Bold";            
-            
+            currentFont = "'Special Elite', cursive";
+            currentFontSize = '24px';
             break;
 
         case "font2":
-            currentFont = "Comic Sans MS";
-                 
+            currentFont = "Pangolin, cursive";
+            currentFontSize = '24px';
             break;
 
         case "font3":
-            currentFont = "Garamond";
-                 
+            currentFont = "Sofia";
+            currentFontSize = '20px';
             break;
 
         case "font4":
-            currentFont = 'Arial Black';
-                  
+            currentFont = "'Leckerli One', cursive";
+            currentFontSize = '22px';     
             break;
             
         case "font5":
-            currentFont = 'SentinelLight';
-        
+            currentFont = "mufferaw_rg";
+            currentFontSize = '24px';
             break;       
     
         default:
             break;
     }
 
-    $('.badge-text2 text').css('font-family',currentFont);  
+    $('.badge-text2 text').css({'font-family' : currentFont, 'font-size' : currentFontSize});  
 }
 
 function updateFontColor(e){
@@ -156,7 +163,7 @@ function updateFontColor(e){
     currentFontColor = $(e.target).data().color;
 
     $('.badge-text2 text').css('fill',currentFontColor);
-    $('.badge-text2 text').css('text-shadow', "0 0 9px " + currentFontColor);
+    $('.badge-text2 text').css('text-shadow', "0 0 15px " + currentFontColor);
   
 
     // $('.badge-text2 text').css('filter', `opacity(0.5) drop-shadow(${currentFontColor} 0px 0px 0px)`);
@@ -214,17 +221,16 @@ function updateApronTextOpacity(){
         $('.badge-text2').css('opacity', .15);
     }
     else if (currentApronColor === 'light'){
-        $('.badge-text2').css('opacity', .25);
+        $('.badge-text2').css('opacity', .30);
     }
 }
 
 function updateApronTextPath(){
+
     if (currentApronColor === 'dark'){
         $('#curve').attr('d', "M 130 237 L 160 237 C 300 210 270 237 320 245 L 330 245");
     }
     else if (currentApronColor === 'light'){
-        $('#curve').attr('d', "M 130 235 L 160 235 C 300 210 270 230 320 240 L 330 240");
+        $('#curve').attr('d', "M 130 235 L 160 235 C 300 210 270 230 325 240 L 320 245");
     }
 }
-
-
