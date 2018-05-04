@@ -220,6 +220,7 @@ img#product {
     fill:#e7967f;
     text-align: center; 
     min-width: 20px;  
+    text-shadow: 0 0 9px #e7967f;
  }
 
  .slider-wrapper {

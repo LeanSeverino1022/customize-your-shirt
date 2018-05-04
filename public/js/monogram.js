@@ -80,6 +80,8 @@ function updateApronColor(e){
     $(".apron-background img").attr("src", $(e.target).attr("src"));
 
     updateApronTextOpacity();
+
+    updateApronTextPath();
 }
 
 function updateStencilFigure(){
@@ -213,6 +215,15 @@ function updateApronTextOpacity(){
     }
     else if (currentApronColor === 'light'){
         $('.badge-text2').css('opacity', .25);
+    }
+}
+
+function updateApronTextPath(){
+    if (currentApronColor === 'dark'){
+        $('#curve').attr('d', "M 130 237 L 160 237 C 300 210 270 237 320 245 L 330 245");
+    }
+    else if (currentApronColor === 'light'){
+        $('#curve').attr('d', "M 130 235 L 160 235 C 300 210 270 230 320 240 L 330 240");
     }
 }
 
