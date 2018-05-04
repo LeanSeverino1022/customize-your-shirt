@@ -210,10 +210,10 @@ img#product {
 }
 
 .badge-text2 {
-    font-weight: bold;    
+    /* font-weight: bold;     */
     font-family: "Garamond";
-    mix-blend-mode: exclusion;
-    opacity: .57;
+    mix-blend-mode: screen;
+    opacity: .25;
 }
 
 .badge-text2 text {

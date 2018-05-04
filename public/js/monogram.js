@@ -154,6 +154,8 @@ function updateFontColor(e){
     currentFontColor = $(e.target).data().color;
 
     $('.badge-text2 text').css('fill',currentFontColor);
+    $('.badge-text2 text').css('text-shadow', "0 0 9px " + currentFontColor);
+  
 
     // $('.badge-text2 text').css('filter', `opacity(0.5) drop-shadow(${currentFontColor} 0px 0px 0px)`);
     // $stencilImg.css('background-color', selectedColor);
@@ -165,23 +167,41 @@ function updateFontColor(e){
 
 function updateStencilColor(e){
     var selectedColor = $(e.target).data().color;
-    $stencilImg.css('filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
+    $stencilImg.css('filter', `opacity(0.3) drop-shadow(${selectedColor} 0px 0px 0px)`);
     // $stencilImg.css('background-color', selectedColor);
-    $stencilImg.css('-webkit-filter', `opacity(0.5) drop-shadow(${selectedColor} 0px 0px 0px)`);
+    $stencilImg.css('-webkit-filter', `opacity(0.3) drop-shadow(${selectedColor} 0px 0px 0px)`);
+
+    switchBlendModeStencil(e.target);
 }
 
 function switchBlendMode( selectedOption ){
     
     if( $( selectedOption ).hasClass('overlay')) {
     
-        if($(".apron-background img").css('mix-blend-mode') !== 'overlay') {
+        if($(".badge-text2").css('mix-blend-mode') !== 'overlay') {
             $(".badge-text2").css('mix-blend-mode', 'overlay');
         }   
     } 
     else /* option does not have class overlay */
     {
         if ($(".badge-text2").css('mix-blend-mode') === 'overlay' ) {
-            $(".badge-text2").css('mix-blend-mode', 'exclusion')
+            $(".badge-text2").css('mix-blend-mode', 'screen ')
+        }
+    }
+}
+
+function switchBlendModeStencil( selectedOption ){
+    
+    if( $( selectedOption ).hasClass('black')) {
+    
+        if($("#stencil").css('mix-blend-mode') !== 'multiply') {
+            $("#stencil").css('mix-blend-mode', 'multiply');
+        }   
+    } 
+    else 
+    {
+        if ($("#stencil").css('mix-blend-mode') !== 'overlay' ) {
+            $("#stencil").css('mix-blend-mode', 'overlay')
         }
     }
 }
@@ -189,10 +209,10 @@ function switchBlendMode( selectedOption ){
 
 function updateApronTextOpacity(){
     if (currentApronColor === 'dark'){
-        $('.badge-text2').css('opacity', .22);
+        $('.badge-text2').css('opacity', .15);
     }
     else if (currentApronColor === 'light'){
-        $('.badge-text2').css('opacity', .57);
+        $('.badge-text2').css('opacity', .25);
     }
 }
 
