@@ -20,7 +20,6 @@ let currentFontOpacity = null;
 
 
 
-
 //dark and light for now
 let currentApronColor =  'light'
 
@@ -127,28 +126,28 @@ function updateFontFamily(){
     
     switch(val) {
         case "font1":
-            currentFont = "'Special Elite', cursive";
-            currentFontSize = '24px';
+            currentFont = "Blambot";
+            currentFontSize = '19px';
             break;
 
         case "font2":
-            currentFont = "Pangolin, cursive";
+            currentFont = "CC_wild_words_roman";
             currentFontSize = '24px';
             break;
 
         case "font3":
-            currentFont = "Sofia";
-            currentFontSize = '20px';
+            currentFont = "Coopbl";
+            currentFontSize = '22px';
             break;
 
         case "font4":
-            currentFont = "'Leckerli One', cursive";
-            currentFontSize = '22px';     
+            currentFont = "Extra_Grotesque";
+            currentFontSize = '20px';     
             break;
             
         case "font5":
-            currentFont = "mufferaw_rg";
-            currentFontSize = '24px';
+            currentFont = "Sofia";
+            currentFontSize = '20px';
             break;       
     
         default:
@@ -163,7 +162,10 @@ function updateFontColor(e){
     currentFontColor = $(e.target).data().color;
 
     $('.badge-text2 text').css('fill',currentFontColor);
-    $('.badge-text2 text').css('text-shadow', "0 0 15px " + currentFontColor);
+    // $('.badge-text2 text').css('text-shadow', "0 0 9px " + currentFontColor);
+
+    
+    
   
 
     // $('.badge-text2 text').css('filter', `opacity(0.5) drop-shadow(${currentFontColor} 0px 0px 0px)`);
@@ -217,11 +219,15 @@ function switchBlendModeStencil( selectedOption ){
 
 
 function updateApronTextOpacity(){
+
+    // TODO separeate text-shadow maybe later on
     if (currentApronColor === 'dark'){
         $('.badge-text2').css('opacity', .15);
+        // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(43,44, 48)");
     }
     else if (currentApronColor === 'light'){
-        $('.badge-text2').css('opacity', .30);
+        $('.badge-text2').css('opacity', .25);
+        // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(104, 99, 101)");
     }
 }
 
@@ -231,6 +237,6 @@ function updateApronTextPath(){
         $('#curve').attr('d', "M 130 237 L 160 237 C 300 210 270 237 320 245 L 330 245");
     }
     else if (currentApronColor === 'light'){
-        $('#curve').attr('d', "M 130 235 L 160 235 C 300 210 270 230 325 240 L 320 245");
+        $('#curve').attr('d', "M 130 238 L 160 235 C 300 210 270 230 325 240 L 320 240");
     }
 }

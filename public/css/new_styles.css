@@ -213,15 +213,17 @@ img#product {
     /* font-weight: bold;     */
     font-family: "Garamond";
     mix-blend-mode: screen;
-    opacity: .30;
+    opacity: .25;
 }
 
 .badge-text2 text {
     fill:#e7967f;
     text-align: center; 
     min-width: 20px;  
-    text-shadow: 0 0 9px #e7967f;
-    font-family: "Special Elite", cursive;
+    /* text-shadow: 0 0 1px #e7967f; */
+    /* text-shadow: 0px 0px 9px rgb(104, 99, 101); */
+    font-size: 20px; 
+    font-family: 'Extra_Grotesque';
  }
 
  .slider-wrapper {
@@ -273,3 +275,31 @@ img#product {
     font-family: mufferaw_rg;
     src: url('../apron_font/mufferaw_rg.ttf') format('truetype'); 
 }
+
+
+/* new font from Robert */
+  @font-face {
+    font-family: Blambot;
+    src: url('../apron_font/new/BlambotProRegular.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: CC_wild_words_roman;
+    src: url('../apron_font/new/CC_Wild_Words_Roman_0.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: Coopbl;
+    src: url('../apron_font/new/COOPBL.ttf') format('truetype'); 
+}
+
+  @font-face {
+    font-family: Extra_Grotesque;
+    src: url('../apron_font/new/Extra_Grotesque.ttf') format('truetype'); 
+}
+  @font-face {
+    font-family: Vladimir;
+    src: url('../apron_font/new/VLADIMIR.ttf') format('truetype'); 
+}
+
+
