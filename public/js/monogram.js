@@ -220,13 +220,15 @@ function switchBlendModeStencil( selectedOption ){
 
 function updateApronTextOpacity(){
 
-    // TODO separeate text-shadow maybe later on
+    // TODO separeate other settings from text opacity  maybe later on
     if (currentApronColor === 'dark'){
         $('.badge-text2').css('opacity', .15);
+        $('.badge-text2').css('left', '3.7px');
         // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(43,44, 48)");
     }
     else if (currentApronColor === 'light'){
         $('.badge-text2').css('opacity', .25);
+        $('.badge-text2').css('left', '6.6px');
         // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(104, 99, 101)");
     }
 }
