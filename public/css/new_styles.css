@@ -226,16 +226,20 @@ img#product {
     font-family: 'Extra_Grotesque';
  }
 
- .slider-wrapper {
+ .slider-wrapper, .slider-wrapper2 {
     position: fixed;
     top:0;
     left: 0;
     box-shadow: 1px 3px 10px rgba(10, 10, 10, 0.5);
     border: 0.07rem solid rgb(100,100,100);
     background: rgba(30,30,30,0.85);
-    padding: 7px 15px 8px;
+    padding: 3px 15px;
     border-radius: 0 0 10px;
     color: #ddd;
+  }
+
+  .slider-wrapper2 {
+      top: 320px;      
   }
 
 

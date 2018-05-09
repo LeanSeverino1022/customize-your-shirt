@@ -73,56 +73,76 @@
 
 <body>
 
-    <div id="header">
-        <div class="container">
-            <div id="storeLogo">
-                <a href="http://everthreadsandbox.com">
-                    <img src="images/store_logo.png">
-                </a>
-            </div>
-            <div id="headerShortcuts" class="ui-buttonset">
-                <a href="http://everthreadsandbox.com/shopping_cart.php">
-                    <span>CART CONTENTS</span>
-                </a>
-                <a href="http://everthreadsandbox.com/checkout_shipping.php">
-                    <span>CHECKOUT</span>
-                </a>
-                <a href="http://everthreadsandbox.com/account.php">
-                    <span>MY ACCOUNT</span>
-                </a>
-            </div>
-        </div>
-    </div>
+    <div id="header"></div>
 
     <!-- slider wrapper -->
     <div class="slider-wrapper">
-        <label for="opacity-slider">Opacity</label>
+        <label for="opacity-slider">Apron Text Opacity</label>
         <input type="range" min="0" max="1" value="1" id="opacity-slider" step="0.01">
         <output for="opacity-slider" id="slider-value">1</output>
     </div>
     
    
-    <form action="" style="margin: 50px 0 0 50px; position: fixed;" >
-            <h5>mix-blend-mode value</h5>
-        <input type="radio" name="mix_blend_mode" value="inherit"> inherit <br>
-        <input type="radio" name="mix_blend_mode" value="unset"> unset <br>
-        <input type="radio" name="mix_blend_mode" value="normal"> normal <br>
-        <input type="radio" name="mix_blend_mode" value="multiply"> multiply<br>
-        <input type="radio" name="mix_blend_mode" value="screen"> screen<br>
-        <input type="radio" name="mix_blend_mode" value="overlay"> overlay<br>
-        <input type="radio" name="mix_blend_mode" value="darken"> darken<br>
-        <input type="radio" name="mix_blend_mode" value="lighten"> lighten<br>
-        <input type="radio" name="mix_blend_mode" value="color-dodge"> color-dodge<br>
-        <input type="radio" name="mix_blend_mode" value="color-burn"> color-burn<br>
-        <input type="radio" name="mix_blend_mode" value="hard-light"> hard-light<br>
-        <input type="radio" name="mix_blend_mode" value="soft-light"> soft-light<br>
-        <input type="radio" name="mix_blend_mode" value="difference"> difference<br>
-        <input type="radio" name="mix_blend_mode" value="exclusion"> exclusion<br>
-        <input type="radio" name="mix_blend_mode" value="hue"> hue<br>
-        <input type="radio" name="mix_blend_mode" value="saturation"> saturation<br>
-        <input type="radio" name="mix_blend_mode" value="color"> color<br>
-        <input type="radio" name="mix_blend_mode" value="luminosity"> luminosity<br>
+    <form action="" style="margin: 10px 0 0 10px; position: fixed;" >
+            <h5>Apron Text mix-blend-mode value</h5>
+        
+        <div style="display: inline-block; width: 100px">
+            <input type="radio" name="mix_blend_mode" value="normal"> normal <br>
+            <input type="radio" name="mix_blend_mode" value="multiply"> multiply<br>
+            <input type="radio" name="mix_blend_mode" value="screen"> screen<br>
+            <input type="radio" name="mix_blend_mode" value="overlay"> overlay<br>
+            <input type="radio" name="mix_blend_mode" value="darken"> darken<br>
+            <input type="radio" name="mix_blend_mode" value="lighten"> lighten<br>
+        </div>
+        <div style="display: inline-block; width: 150px">
+            <input type="radio" name="mix_blend_mode" value="color-dodge"> color-dodge<br>
+            <input type="radio" name="mix_blend_mode" value="color-burn"> color-burn<br>
+            <input type="radio" name="mix_blend_mode" value="hard-light"> hard-light<br>
+            <input type="radio" name="mix_blend_mode" value="soft-light"> soft-light<br>
+            <input type="radio" name="mix_blend_mode" value="difference"> difference<br>
+            <input type="radio" name="mix_blend_mode" value="exclusion"> exclusion<br>
+            <input type="radio" name="mix_blend_mode" value="color"> color<br>
+        </div>
+        
       </form>
+    
+
+
+    <form action="" style="margin: 10px 0 0 10px; position: fixed; top: 350px">
+        <h5>STENCIL mix-blend-mode value</h5>
+    
+        <div style="display: inline-block; width: 100px">
+            <input type="radio" name="stencil_mix_blend_mode" value="normal"> normal
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="multiply"> multiply
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="screen"> screen
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="overlay"> overlay
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="darken"> darken
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="lighten"> lighten
+            <br>
+        </div>
+        <div style="display: inline-block; width: 150px">
+            <input type="radio" name="stencil_mix_blend_mode" value="color-dodge"> color-dodge
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="color-burn"> color-burn
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="hard-light"> hard-light
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="soft-light"> soft-light
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="difference"> difference
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="exclusion"> exclusion
+            <br>
+            <input type="radio" name="stencil_mix_blend_mode" value="color"> color
+            <br>
+        </div>
+    
+    </form>
       
 
     <div class="container">
@@ -139,56 +159,53 @@
                 <div class="product-essential">
 
                     <div class="product-img-box">
-
+                    
                         <div id="rrr-contain">
-                            <img src="images/apron-outline.png" class="apron-outline">
+                            <!-- <img src="images/apron-outline.png" class="apron-outline"> -->
                             <div id="pillow" class="fshow-apron" style="background-image: url('images/apron-outline.png');"></div>
-
-
+                    
+                    
                             <!-- <div class="fabric-overlay" style="background-image: url(&#39;clever/images/fabric-overlay.png&#39;);"></div> -->
-
-
+                    
+                    
                             <div id="pillow1-contain" class="pillow-contain-show">
-
-                                <div class="apron-shadow">
-                                    <img c>
-                                </div>
+                    
                                 <div class="apron-shadow2">
                                     <img src="images/apron-shadow.png">
                                 </div>
-
+                    
                                 <!-- <div id="letters" class="overlay blend-letters"><h1>BON APETIT</h1></div> -->
-
+                    
                                 <!-- <div class="badge-text blend-letters"> -->
-                                    <!-- <h2 id="curve-badge">BSDST</h2> -->
+                                <!-- <h2 id="curve-badge">BSDST</h2> -->
                                 <!-- </div> -->
-                                
-                                <svg class="badge-text2" viewBox="0 0 500 500" style="position: relative; top: -150px; left: 5.8px;">
+                    
+                                <svg class="badge-text2" viewBox="0 0 500 500" style="position: relative; top: -150px; left: 6.6px;">
                                     <!-- <path id="curve" fill="transparent" d="M 130 250 Q 250 200 300 250" /> -->
                                     <!-- <path id="curve" fill="transparent" d="M 130 240 C 300 200 260 230 330 250 " /> -->
-                                    <path id="curve" fill="transparent" d="M 130 240 L 160 240 C 300 210 270 230 320 240 L 330 240" /><!--  stroke="red" -->
+                                    <path id="curve" fill="transparent" d="M 130 238 L 160 235 C 300 210 270 230 325 240 L 320 240"></path>
                                     <!-- <path id="curve" fill="transparent" d="M 100 300 Q 150 300 150 300 Q 300 250 350 300 Q 375 300 400 300 " /> -->
-                                    
-                                    <text width="500" style="text-anchor: middle;">
-                                      <textPath xlink:href="#curve" style="font-size: 24px; letter-spacing: 1px" startOffset="50%">
-                                        BON APPETIT
-                                      </textPath>
+                    
+                                    <text width="500" style="text-anchor: middle; letter-spacing: 1px">
+                                        <textPath xlink:href="#curve" startOffset="50%">
+                                            BON APPETIT
+                                        </textPath>
                                     </text>
-                                  </svg>
-                                
+                                </svg>
+                    
                                 <div id="stencil" class="blend-stencil" style="opacity: 1;">
-                                    <img id="stencilImg" src="images/stencil1.png" style="filter: opacity(0.5) drop-shadow(rgb(231, 150, 127) 0px 0px 0px);">
+                                    <img id="stencilImg" src="images/stencil1.png" style="filter: opacity(0.3) drop-shadow(rgb(231, 150, 127) 0px 0px 0px);">
                                 </div>
-
-
+                    
+                    
                             </div>
                             <div class="apron-background">
                                 <img src="images/apron.jpg">
                             </div>
                             <div class="rrr2 large" id="normal-repeat"></div>
-
+                    
                         </div>
-
+                    
                     </div>
                 </div>
             </div>
@@ -363,6 +380,7 @@
     </div>
     
     <script src="js/arctext.js"></script>
+    <script src="js/monogram.js"></script>
     <script src="js/monogram_debug.js"></script>
 </body>
 
