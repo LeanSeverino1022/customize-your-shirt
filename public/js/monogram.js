@@ -223,7 +223,7 @@ function updateApronTextOpacity(){
     // TODO separeate other settings from text opacity  maybe later on
     if (currentApronColor === 'dark'){
         $('.badge-text2').css('opacity', .15);
-        $('.badge-text2').css('left', '3.7px');
+        $('.badge-text2').css('left', '6.6px');
         // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(43,44, 48)");
     }
     else if (currentApronColor === 'light'){
@@ -235,8 +235,17 @@ function updateApronTextOpacity(){
 
 function updateApronTextPath(){
 
+    var setSameTextPath = false;
+
+    if(setSameTextPath) {
+        $('#curve').attr('d', "M 130 238 L 160 235 C 300 210 270 230 325 240 L 320 240");
+        return;
+    }
+
+
     if (currentApronColor === 'dark'){
-        $('#curve').attr('d', "M 130 237 L 160 237 C 300 210 270 237 320 245 L 330 245");
+        // $('#curve').attr('d', "M 130 237 L 160 237 C 300 210 270 237 320 245 L 330 245");
+        $('#curve').attr('d', "M 130 240 L 160 237 C 300 215 244 230 323 242 L 323 242");
     }
     else if (currentApronColor === 'light'){
         $('#curve').attr('d', "M 130 238 L 160 235 C 300 210 270 230 325 240 L 320 240");
