@@ -6,7 +6,7 @@
 $(document).ready(function () {
 
     // debugging stuff
-    jQuery.get(`http://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${2}&o6=6-1&o${7}=${7}-${1}`).fail(function(jqXHR, textStatus, errorThrown) {
+    jQuery.get(`https://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${2}&o6=6-1&o${7}=${7}-${1}`).fail(function(jqXHR, textStatus, errorThrown) {
         
      // do something, maybe?
      console.error( "error:");
@@ -293,8 +293,8 @@ let optionsRequest = function ($) {
         if( selectedStencil == "rooster" ) stencilColor += 10;
 
 
-        var apronImageURL = showApronTextImage ? `http://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${o1}&o5=5-3&o${stencilNum}=${stencilNum}-${stencilColor}`
-                                     : `http://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${o1}&insertfontqueryhere&o${stencilNum}=${stencilNum}-${stencilColor}`
+        var apronImageURL = showApronTextImage ? `https://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${o1}&o5=5-3&o${stencilNum}=${stencilNum}-${stencilColor}`
+                                     : `https://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${o1}&insertfontqueryhere&o${stencilNum}=${stencilNum}-${stencilColor}`
 
 
     // if a request already exists, then abort it to avoid spamming
