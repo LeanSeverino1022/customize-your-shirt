@@ -1,21 +1,26 @@
+
+
+
+
 // todo puyih: cleanup
+$(document).ready(function () {
 
-let $apronTextInput = $('#MonoText');
-let $apronTextElement = $('#curve-badge');
+    // debugging stuff
+    jQuery.get(`http://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${2}&o6=6-1&o${7}=${7}-${1}`).fail(function(jqXHR, textStatus, errorThrown) {
+        
+     // do something, maybe?
+     console.error( "error:");
+       }).done(function(image){
+           return;
+        productImage.attr('src', $(image).attr('src'));
+       })
 
-let $apronThumbs = $('.apron_thumbs');
-let $stencilSelect =  $("#stencilDrop");
-let $fontSelect = $("#fontFamilyDrop");
-
-let $optionTextColor = $('#font-color-picker');
-let $optionStencilColor = $('#stencil-color-picker');
-let $stencilImg = $('#stencilImg');
 
 // default settings
 
 let currentFont = null;
 let currentFontSize = null;
-let currentFontColor = null;
+let selectedFontColor = null;
 let currentFontOpacity = null;
 
 
@@ -30,14 +35,13 @@ $(document).ready(function () {
         $(this).tab('show');
     });
 
-    //set the apron text arc
-	$apronTextElement.show().arctext({radius: 230});
+    
 
     initializeValues();
     setupOptionsEventHandlers();
 
-    $stencilSelect.selectmenu();
-    $fontSelect.selectmenu();
+    // $("#stencilDrop").selectmenu();
+    // $("#fontFamilyDrop").selectmenu();
 });
 
 function initializeValues(){
@@ -47,157 +51,152 @@ function initializeValues(){
 
 
 /********************************* 
-    EVENT HANDLERS
+    other EVENT HANDLERS
 **********************************/
+// MAIN APRON CUSTOMIZATION EVENT HANDLERS
 function setupOptionsEventHandlers(){
-    $apronTextInput.on('keyup', updateText);
-    $apronThumbs.on("click", updateApronColor);
-    $stencilSelect.on("selectmenuchange", updateStencilFigure); //jquery ui selectmenu event
-    $fontSelect.on("selectmenuchange", updateFontFamily); //jquery ui selectmenu event
-    $optionTextColor.on('click', '.color-option', updateFontColor );
-    $optionStencilColor.on('click', '.color-option2', updateStencilColor);
+    $('#MonoText').on('keyup', updateText);
+    $('.apron_thumbs').on("click", "[data-target='o1']" ,updateApronColor);
+    $("#stencilDrop").on("change", updateStencilFigure); //jquery ui selectmenu event
+    $('#stencil-color-picker').on('click', updateStencilColor);
+    
+    $("#fontFamilyDrop").on("change", updateFontFamily); //jquery ui selectmenu event
+    $('#font-color-picker').on('click', '.color-option', updateFontColor );
 }
 
-// function updateText(){
-//     $('.badge-text h2').remove()
-//     $('.badge-text').append('<h2 id="curve-badge"></h2>');
-//     $('.badge-text h2').text($("#MonoText").val().toUpperCase());
-//     $('.badge-text h2').arctext({ radius: 180 });
-//     $('#curve-badge').css('font-family',currentFont);
-//     $('#curve-badge').css('color',currentFontColor);  
-// }
+
 
 function updateText(){
     $('textPath').text($("#MonoText").val().toUpperCase());
     $('#curve-badge').css('font-family',currentFont);
-    $('#curve-badge').css('color',currentFontColor);  
+    $('#curve-badge').css('color',selectedFontColor);  
 }
 
 function updateApronColor(e){
 
-    if($(e.target).hasClass('dark')) {
-        currentApronColor = 'dark';
-    }
-    if($(e.target).hasClass('light')) {
-        currentApronColor = 'light';
-    }
+    //if option is already current
+    if ($(e.target).hasClass('active')) return;
+
+    $("[data-target='o1'].active").removeClass('active');
+
+    $(e.target).addClass('active');
+
+    return optionsRequest(jQuery);
 
 
-    $(".apron-background img").attr("src", $(e.target).attr("src"));
-
-    updateApronTextOpacity();
-
-    updateApronTextPath();
 }
 
 function updateStencilFigure(){
+ 
 
-    var val = $stencilSelect.val();
-    var image = $stencilImg.get(0);
-    
-    switch (parseInt(val)) {
-        case 1:
-            image.src='public/images/stencil1.png'
-            break;
-        case 2:
-            image.src='public/images/stencil2.png'
-            break;
-        case 3:
-            image.src='public/images/stencil3.png'
-            break;
-        case 4:
-            image.src='public/images//stencil4.png'
-            break;
-        case 5:
-            image.src='public/images/stencil5.png'
-            break;
-    
-        default:
-            break;
-    }
 
+    return optionsRequest(jQuery);
     
 }
 
 function updateFontFamily(){
 
-    let val = $fontSelect.val();
-    debugger;
+    let val = $("#fontFamilyDrop").val();
+    
+
+    var letterSpacing = 'normal';
+    var fontWeight = 'normal';
     
     switch(val) {
         case "font1":
-            currentFont = "Blambot";
-            currentFontSize = '19px';
+            currentFont = "CC_wild_words_roman";
+            currentFontSize = '22px';
+            letterSpacing = "-1px";
+             /* done */
             break;
 
         case "font2":
-            currentFont = "CC_wild_words_roman";
-            currentFontSize = '24px';
+            currentFont = "Blambot";
+            currentFontSize = '16px';
+            // letterSpacing = "-1px";
+                    /* done */
             break;
 
         case "font3":
             currentFont = "Coopbl";
-            currentFontSize = '22px';
+            currentFontSize = '19px';
+            
+            // done
+            
             break;
 
         case "font4":
             currentFont = "Extra_Grotesque";
-            currentFontSize = '20px';     
+            currentFontSize = '15px'; 
+               /* done */
             break;
             
         case "font5":
-            currentFont = "Sofia";
-            currentFontSize = '20px';
+            // todo: change to vladimir later
+        currentFont = "Vladimir";
+        currentFontSize = '19px';
+        letterSpacing: '1.5px';
+        fontWeight = 'bold';
+        //  letterSpacing = "-1px";
             break;       
     
         default:
             break;
     }
 
-    $('.badge-text2 text').css({'font-family' : currentFont, 'font-size' : currentFontSize});  
+    $('.badge-text2 text').css(
+        {
+            'font-family' : currentFont, 
+            'font-size' : currentFontSize,
+            'letter-spacing' : letterSpacing,
+            'font-weight' : fontWeight
+        });  
 }
 
 function updateFontColor(e){
 
-    currentFontColor = $(e.target).data().color;
+    if ($(e.target).hasClass('active')) return;
 
-    $('.badge-text2 text').css('fill',currentFontColor);
-    // $('.badge-text2 text').css('text-shadow', "0 0 9px " + currentFontColor);
-
+    $("#font-color-picker > .color-option.active").removeClass('active');
+    $(e.target).addClass('active');
     
-    
-  
+    selectedFontColor = $(e.target).data().color;
 
-    // $('.badge-text2 text').css('filter', `opacity(0.5) drop-shadow(${currentFontColor} 0px 0px 0px)`);
-    // $stencilImg.css('background-color', selectedColor);
-    // $('.badge-text2 text').css('-webkit-filter', `opacity(0.5) drop-shadow(${currentFontColor} 0px 0px 0px)`);
+    $('.badge-text2 text').css('fill',selectedFontColor);
 
-    //update mix-blend-mode property 
-    switchBlendMode(e.target);   
+    adjustFontSetting(e.target);   
 }
 
 function updateStencilColor(e){
-    var selectedColor = $(e.target).data().color;
-    $stencilImg.css('filter', `opacity(0.3) drop-shadow(${selectedColor} 0px 0px 0px)`);
-    // $stencilImg.css('background-color', selectedColor);
-    $stencilImg.css('-webkit-filter', `opacity(0.3) drop-shadow(${selectedColor} 0px 0px 0px)`);
+    
+    //if option is already current
+    if ($(e.target).hasClass('active')) return;
 
-    switchBlendModeStencil(e.target);
+    $("#stencil-color-picker > .stencil.color-option.active").removeClass('active');
+
+    $(e.target).addClass('active');
+
+    var selectedColor = $(e.target).data().color;
+    
+
+    return optionsRequest(jQuery);
+
+    // switchBlendModeStencil(e.target);
 }
 
-function switchBlendMode( selectedOption ){
+function adjustFontSetting( selectedOption ){
+
     
-    if( $( selectedOption ).hasClass('overlay')) {
-    
-        if($(".badge-text2").css('mix-blend-mode') !== 'overlay') {
-            $(".badge-text2").css('mix-blend-mode', 'overlay');
-        }   
-    } 
-    else /* option does not have class overlay */
+    if( $( selectedOption ).data().color === "#0f0f0f" ||
+        $( selectedOption ).data().color === "#774B3A" ) 
     {
-        if ($(".badge-text2").css('mix-blend-mode') === 'overlay' ) {
-            $(".badge-text2").css('mix-blend-mode', 'screen ')
-        }
+    
+        $(".badge-text2 text").css('opacity', '.60');
+    } 
+    else 
+    {
+        
+        $(".badge-text2 text").css('opacity', '.29')
     }
 }
 
@@ -218,39 +217,9 @@ function switchBlendModeStencil( selectedOption ){
 }
 
 
-function updateApronTextOpacity(){
-
-    // TODO separeate other settings from text opacity  maybe later on
-    if (currentApronColor === 'dark'){
-        $('.badge-text2').css('opacity', .15);
-        $('.badge-text2').css('left', '6.6px');
-        // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(43,44, 48)");
-    }
-    else if (currentApronColor === 'light'){
-        $('.badge-text2').css('opacity', .25);
-        $('.badge-text2').css('left', '6.6px');
-        // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(104, 99, 101)");
-    }
-}
-
-function updateApronTextPath(){
-
-    var setSameTextPath = false;
-
-    if(setSameTextPath) {
-        $('#curve').attr('d', "M 130 238 L 160 235 C 300 210 270 230 325 240 L 320 240");
-        return;
-    }
 
 
-    if (currentApronColor === 'dark'){
-        // $('#curve').attr('d', "M 130 237 L 160 237 C 300 210 270 237 320 245 L 330 245");
-        $('#curve').attr('d', "M 130 240 L 160 237 C 300 215 244 230 323 242 L 323 242");
-    }
-    else if (currentApronColor === 'light'){
-        $('#curve').attr('d', "M 130 238 L 160 235 C 300 210 270 230 325 240 L 320 240");
-    }
-}
+
 
 
 
@@ -260,17 +229,72 @@ function updateApronTextPath(){
 
 
 let xhr = null;
+const productImage = $('#product-image');
+
+    // abortableWhen function
+    // This function will create a $.when function whose requests are abortable
+    // in the event of request spamming
+    function abortableWhen($, xhrs) {
+        return {
+            abort: () => {
+                xhrs.map(request => request.abort());
+            },
+
+            // Return $.when as a promise.
+            // $.when waits for all the requests to finish before continuing
+            promise: $.when(
+                ...xhrs
+            )
+        };
+    }
 
 // OPTIONS REQUEST TEMPLATE
 let optionsRequest = function ($) {
 
+    var showApronTextImage = false;
+    var apronImageURL = null;
 
-    const o1 = $(".item-color-option.active[data-target='o1']").data().color;  //shoe          
-    const o2 = 4;     // o2/shoelace = black by default for now
-    const o3 = $(".item-color-option.active[data-target='o3']").data().color; //Pants
-    const o4 = $(".item-color-option.active[data-target='o4']").data().color; //Shirt
-    const o5 = $(".item-color-option.active[data-target='o5']").data().color; //Sweater
-    const o6 = $(".item-color-option.active[data-target='o6']").data().color; //jacket
+    var o1 = $("[data-target='o1'].active").data().color; 
+    var stencilColor = $(".stencil.color-option.active").data().color; 
+    var selectedStencil = $("#stencilDrop").val();
+    var stencilEnum= {
+        BBQ: 7,
+        BURGER: 8,
+        COW: 9,
+        CHICKEN_OR_CORKSCREW: 10
+    };
+
+    var stencilNum = stencilEnum.BBQ;
+
+    
+    switch (selectedStencil) {
+        case "bbq":
+            stencilNum = stencilEnum.BBQ;
+            console.log('BBQ');
+            
+            break;
+        case "hamburger":
+            stencilNum = stencilEnum.BURGER;
+            console.log('burger')
+            break;
+        case "cow":
+            stencilNum = stencilEnum.COW;
+             console.log('cow')
+            break;
+   
+        default: /* case 10 */
+            stencilNum = stencilEnum.CHICKEN_OR_CORKSCREW;
+            console.log('chicken or corkscrew')
+            break;
+    }
+
+
+    //option #10 11-20 is rooster and while option #10, option values 1-10 is for corkscrew
+        if( selectedStencil == "rooster" ) stencilColor += 10;
+
+
+        var apronImageURL = showApronTextImage ? `http://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${o1}&o5=5-3&o${stencilNum}=${stencilNum}-${stencilColor}`
+                                     : `http://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2223&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&o1=1-${o1}&insertfontqueryhere&o${stencilNum}=${stencilNum}-${stencilColor}`
 
 
     // if a request already exists, then abort it to avoid spamming
@@ -281,11 +305,16 @@ let optionsRequest = function ($) {
     //  Create the request
     //  THESE ARE THE REQUEST, YOU'LL HAVE TO MAKE THE CHANGES HERE
     xhr = abortableWhen(jQuery, [
-        jQuery.get(`https://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2205&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&${constructQueryString([o1, o2, o3, o4, o5, o6])}`),
+        // jQuery.get(`https://everthreadapi.com/calibration/preview2.php?r5d=54&augmentID=2205&format=NOTbase64&patternID=1&isThumb=0&color1=&color2=&color3=&color4=&scaleSize=1&isr=1&angle=1&${constructQueryString([o1, o2, o3, o4, o5, o6])}`),
+        jQuery.get(apronImageURL).fail(function(jqXHR, textStatus, errorThrown) {
+           
+        // do something, maybe?
+        console.error( "error:");
+          }),
     ]);
 
 
-    return xhr.promise.done(image => {
+     return xhr.promise.done(image => {
 
         productImage.attr('src', $(image).attr('src'));
 
@@ -293,12 +322,14 @@ let optionsRequest = function ($) {
 
         return true;
     })
-        .catch(error => {
-            console.log('error', error);
+    .catch(error => {
+        console.log('error', error);
 
 
-            return true;
-        });
+        return true;
+    });
+
+
 }; 
 
 let constructQueryString = function (optionsArray) {
@@ -306,3 +337,9 @@ let constructQueryString = function (optionsArray) {
         .map((val, idx) => `o${idx + 1}=${idx + 1}-${val}`)
         .join('&');
 };
+
+
+// $(document).on("newMessage", newMessageHandler);
+
+// APRON color picker
+});

@@ -1,25 +1,46 @@
+/* APRON FONTS */
+/* new fonts from Robert */
+@font-face {
+    font-family: Blambot;
+    src: url('../apron_font/new/BlambotProRegular.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: CC_wild_words_roman;
+    src: url('../apron_font/new/CC_Wild_Words_Roman_0.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: Coopbl;
+    src: url('../apron_font/new/coopbl_font.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: Extra_Grotesque;
+    src: url('../apron_font/new/Extra_Grotesque.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: Vladimir;
+    src: url('../apron_font/new/VLADIMIR.TTF') format('truetype'); 
+}
+
+@font-face {
+    font-family: "Gotham";
+    src:url('../fonts/Gotham-Book-Regular.otf');
+}
+@font-face {
+    font-family: "Gotham Medium";
+    src:url('../fonts/GothamMedium_1.ttf');
+}
+@font-face {
+    font-family: "Gotham ExtraLight";
+    src:url('../fonts/Gotham-Extra-Light.otf');
+}
+
 /* style OVERRIDES. Did not change default css styles from easy-responsive-tabs.css, monogram.css  */
 #MonoText {
     text-transform: uppercase;
 }
-
-.badge-text {
-    left: 177px;
-    position: relative;
-    width: 400px;
-    border-radius: 50%;
-    transform: rotate(0);
-    top: 65px;
-    left: 70px;
-  }
-  .badge-text h2 {
-      color:#e7967f;
-      /* font-size: 36px !important;  */
-      text-align: center; 
-      min-width: 20px;  
-      opacity: .5;
-      /* font-weight: bold; */
-    }
 
 
   .apron_thumbs img:hover {
@@ -28,7 +49,7 @@
 
   .apron_thumbs img { opacity: 1}
 
-  .color-option, .color-option2 {
+  .color-option {
       border-radius: 37px;
       width: 37px;
       height: 37px;
@@ -66,18 +87,6 @@
 
 /* copied styles */
 
-@font-face {
-    font-family: "Gotham";
-    src:url('../fonts/Gotham-Book-Regular.otf');
-}
-@font-face {
-    font-family: "Gotham Medium";
-    src:url('../fonts/GothamMedium_1.ttf');
-}
-@font-face {
-    font-family: "Gotham ExtraLight";
-    src:url('../fonts/Gotham-Extra-Light.otf');
-}
 
 /* GENERAL STYLES */
 
@@ -205,26 +214,18 @@ img#product {
     transform: scale(1.15);
 }
 
-#stencil {
-    mix-blend-mode: overlay;
-}
 
-.badge-text2 {
-    /* font-weight: bold;     */
-    font-family: "Garamond";
-    mix-blend-mode: screen;
-    opacity: .25;
-}
 
 .badge-text2 text {
-    fill:#e7967f;
+    fill:#98bdfe;;
     text-align: center; 
-    min-width: 20px;  
-    /* text-shadow: 0 0 1px #e7967f; */
-    /* text-shadow: 0px 0px 9px rgb(104, 99, 101); */
-    font-size: 20px; 
+    font-size: 15px; 
     font-family: 'Extra_Grotesque';
- }
+    mix-blend-mode: unset;
+    opacity: .29;
+    letter-spacing: 'normal';
+    transform: scale(1,1.4);
+}
 
  .slider-wrapper, .slider-wrapper2 {
     position: fixed;
@@ -245,65 +246,28 @@ img#product {
 
   /* fonts */
 
-  /* waterlily src: https://freedesignresources.net/waterlily-free-font/ */
-  @font-face {
-    font-family: waterLily;
-    src: url('../apron_font/Waterlily_Script.otf') format("opentype"), 
-         url('../apron_font/Waterlily_Script.ttf') format('truetype'); 
-}
 
-  @font-face {
-    font-family: KaushanScript-Regular;
-    src: url('../apron_font/KaushanScript-Regular.otf') format("opentype"), 
-         url('../apron_font/KaushanScript-Regular.ttf') format('truetype'); 
-}
-
-  @font-face {
-    font-family: Glamor-Regular;
-    src: url('../apron_font/Glamor-Regular.otf') format("opentype"), 
-         url('../apron_font/Glamor-Regular.ttf') format('truetype'); 
-}
-
-  @font-face {
-    font-family: Nickainley;
-    src: url('../apron_font/Nickainley.otf') format("opentype"), 
-         url('../apron_font/Nickainley.ttf') format('truetype'); 
-}
-
-  @font-face {
-    font-family: FrederickatheGreat;
-    src: url('../apron_font/FrederickatheGreat-Regular.ttf') format('truetype'); 
-}
-
-  @font-face {
-    font-family: mufferaw_rg;
-    src: url('../apron_font/mufferaw_rg.ttf') format('truetype'); 
+.color-option.active,
+.stencil-color-option.active {
+    border: black 2px solid;
 }
 
 
-/* new font from Robert */
-  @font-face {
-    font-family: Blambot;
-    src: url('../apron_font/new/BlambotProRegular.ttf') format('truetype'); 
+#fontFamilyDrop-menu #ui-id-1 {font-family: 'CC_wild_words_roman' !important;}
+#fontFamilyDrop-menu #ui-id-2 {font-family: 'Blambot' !important;}
+#fontFamilyDrop-menu #ui-id-3 {font-family: 'Coopbl' !important;}
+#fontFamilyDrop-menu #ui-id-4 {font-family: 'Extra_Grotesque' !important;}
+#fontFamilyDrop-menu #ui-id-5 {font-family: 'Vladimir' !important;}
+
+
+#fontFamilyDrop option {
+    font-size: 1.1em;
 }
 
-  @font-face {
-    font-family: CC_wild_words_roman;
-    src: url('../apron_font/new/CC_Wild_Words_Roman_0.ttf') format('truetype'); 
-}
-
-  @font-face {
-    font-family: Coopbl;
-    src: url('../apron_font/new/coopbl_font.ttf') format('truetype'); 
-}
-
-  @font-face {
-    font-family: Extra_Grotesque;
-    src: url('../apron_font/new/Extra_Grotesque.ttf') format('truetype'); 
-}
-  @font-face {
-    font-family: Vladimir;
-    src: url('../apron_font/new/VLADIMIR.ttf') format('truetype'); 
+#stencilDrop, #MonoText, #fontFamilyDrop {
+    width: 200px;
+    font-family: 'Roboto' !important;
+    font-size: 1.7em;
 }
 
 
