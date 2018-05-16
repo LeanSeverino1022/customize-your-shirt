@@ -120,42 +120,63 @@ function updateStencilFigure(){
 }
 
 function updateFontFamily(){
-
-    let val = $fontSelect.val();
-    debugger;
     
-    switch(val) {
-        case "font1":
-            currentFont = "Blambot";
+        let val = $("#fontFamilyDrop").val();
+        
+    
+        var letterSpacing = 'normal';
+        var fontWeight = 'normal';
+        
+        switch(val) {
+            case "font1":
+                currentFont = "CC_wild_words_roman";
+                currentFontSize = '22px';
+                letterSpacing = "-1px";
+                 /* done */
+                break;
+    
+            case "font2":
+                currentFont = "Blambot";
+                currentFontSize = '16px';
+                // letterSpacing = "-1px";
+                        /* done */
+                break;
+    
+            case "font3":
+                currentFont = "Coopbl";
+                currentFontSize = '19px';
+                
+                // done
+                
+                break;
+    
+            case "font4":
+                currentFont = "Extra_Grotesque";
+                currentFontSize = '15px'; 
+                   /* done */
+                break;
+                
+            case "font5":
+                // todo: change to vladimir later
+            currentFont = "Vladimir";
             currentFontSize = '19px';
-            break;
-
-        case "font2":
-            currentFont = "CC_wild_words_roman";
-            currentFontSize = '24px';
-            break;
-
-        case "font3":
-            currentFont = "Coopbl";
-            currentFontSize = '22px';
-            break;
-
-        case "font4":
-            currentFont = "Extra_Grotesque";
-            currentFontSize = '20px';     
-            break;
-            
-        case "font5":
-            currentFont = "Sofia";
-            currentFontSize = '20px';
-            break;       
+            letterSpacing: '1.5px';
+            fontWeight = 'bold';
+            //  letterSpacing = "-1px";
+                break;       
+        
+            default:
+                break;
+        }
     
-        default:
-            break;
+        $('.badge-text2 text').css(
+            {
+                'font-family' : currentFont, 
+                'font-size' : currentFontSize,
+                'letter-spacing' : letterSpacing,
+                'font-weight' : fontWeight
+            });  
     }
-
-    $('.badge-text2 text').css({'font-family' : currentFont, 'font-size' : currentFontSize});  
-}
 
 function updateFontColor(e){
 
@@ -235,7 +256,7 @@ function updateApronTextOpacity(){
 
 function updateApronTextPath(){
 
-    var setSameTextPath = false;
+    var setSameTextPath = true;
 
     if(setSameTextPath) {
         $('#curve').attr('d', "M 130 238 L 160 235 C 300 210 270 230 325 240 L 320 240");

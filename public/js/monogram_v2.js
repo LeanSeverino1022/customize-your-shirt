@@ -23,6 +23,8 @@ let currentFontSize = null;
 let selectedFontColor = null;
 let currentFontOpacity = null;
 
+var selectedColor ="#e7967f";
+
 
 
 //dark and light for now
@@ -74,25 +76,100 @@ function updateText(){
 
 function updateApronColor(e){
 
-    //if option is already current
-    if ($(e.target).hasClass('active')) return;
 
-    $("[data-target='o1'].active").removeClass('active');
+    if($(e.target).hasClass('dark')) {
+        currentApronColor = 'dark';
+    }
+    if($(e.target).hasClass('light')) {
+        currentApronColor = 'light';
+    }
 
-    $(e.target).addClass('active');
 
-    return optionsRequest(jQuery);
+    $(".apron-background img").attr("src", $(e.target).attr("src"));
+
+    updateApronTextOpacity();
+
+    var currentblendmode;
+
+    if(currentApronColor === 'light') {
+        currentblendmode = $("#stencil").css('mix-blend-mode');
+    }
+
+    if (currentApronColor === 'dark') {
+      
+            $('#stencilImg').css('filter', `opacity(0.08) drop-shadow(${selectedColor} 0px 0px 0px)`);
+            // $stencilImg.css('background-color', selectedColor);
+            $('#stencilImg').css('-webkit-filter', `opacity(0.08) drop-shadow(${selectedColor} 0px 0px 0px)`);
+         
+            $("#stencil").css('mix-blend-mode', 'hard-light');
+
+            if(selectedFontColor === "#0f0f0f") {
+                // if black
+                $(".badge-text2 text").css('opacity', '.34');
+                $(".badge-text2 text").css('mix-blend-mode', 'hard-light');
+                
+            } else {
+                $(".badge-text2 text").css('opacity', '.14')
+                $(".badge-text2 text").css('mix-blend-mode', 'screen');
+         
+                
+            }
+        
+            if(selectedColor === "#0f0f0f") {
+                // if black
+                $("#stencil").css('mix-blend-mode', 'color-burn'); 
+            } else {
+                $("#stencil").css('mix-blend-mode', 'hard-light');
+            }
+        
+    
+
+    }
+    else if (currentApronColor === 'light') {
+        $("#stencil").css('mix-blend-mode', currentblendmode);
+        $('#stencilImg').css('filter', `opacity(0.18) drop-shadow(${selectedColor} 0px 0px 0px)`);
+        // $stencilImg.css('background-color', selectedColor);
+        $('#stencilImg').css('-webkit-filter', `opacity(0.18) drop-shadow(${selectedColor} 0px 0px 0px)`);
+     
+
+    }
+
+
+   
+   
+    // updateApronTextPath();
 
 
 }
 
 function updateStencilFigure(){
- 
-
-
-    return optionsRequest(jQuery);
+   
+        var val = $("#stencilDrop").val();
+        var image = $('#stencilImg').get(0);
+        
+        switch (parseInt(val)) {
+            case 1:
+                image.src='images/stencil1.png'
+                break;
+            case 2:
+                image.src='images/stencil2.png'
+                break;
+            case 3:
+                image.src='images/stencil3.png'
+                break;
+            case 4:
+                image.src='images//stencil4.png'
+                break;
+            case 5:
+                image.src='images/stencil5.png'
+                break;
+        
+            default:
+                break;
+        }
     
-}
+        
+    }
 
 function updateFontFamily(){
 
@@ -162,58 +239,109 @@ function updateFontColor(e){
     
     selectedFontColor = $(e.target).data().color;
 
-    $('.badge-text2 text').css('fill',selectedFontColor);
+    $('.badge-text2 text').css({
+        'fill': selectedFontColor,
+        'text-shadow': "0 0 2px " + selectedFontColor,
+        'stroke': selectedFontColor,
+        'stroke-opacity': .5
+    });
+    
 
     adjustFontSetting(e.target);   
 }
 
 function updateStencilColor(e){
-    
-    //if option is already current
+ 
+   
+
+        //if option is already current
     if ($(e.target).hasClass('active')) return;
-
+        
     $("#stencil-color-picker > .stencil.color-option.active").removeClass('active');
-
+        
     $(e.target).addClass('active');
+        
+    selectedColor = $(e.target).data().color;   
 
-    var selectedColor = $(e.target).data().color;
-    
+        
+    if (currentApronColor === 'light') {
 
-    return optionsRequest(jQuery);
 
-    // switchBlendModeStencil(e.target);
+        $('#stencilImg').css('filter', `opacity(0.18) drop-shadow(${selectedColor} 0px 0px 0px)`);
+        // $stencilImg.css('background-color', selectedColor);
+        $('#stencilImg').css('-webkit-filter', `opacity(0.18) drop-shadow(${selectedColor} 0px 0px 0px)`);
+
+    } else if (currentApronColor === 'dark') {
+
+      
+            $('#stencilImg').css('filter', `opacity(0.08) drop-shadow(${selectedColor} 0px 0px 0px)`);
+            // $stencilImg.css('background-color', selectedColor);
+            $('#stencilImg').css('-webkit-filter', `opacity(0.08) drop-shadow(${selectedColor} 0px 0px 0px)`);
+
+    }
+
+
+    switchBlendModeStencil(e.target);
 }
 
 function adjustFontSetting( selectedOption ){
 
-    
-    if( $( selectedOption ).data().color === "#0f0f0f" ||
-        $( selectedOption ).data().color === "#774B3A" ) 
-    {
-    
-        $(".badge-text2 text").css('opacity', '.60');
-    } 
-    else 
-    {
-        
-        $(".badge-text2 text").css('opacity', '.29')
+   
+    if(currentApronColor === 'light') {
+        if( $( selectedOption ).data().color === "#0f0f0f") 
+        {
+            
+            $(".badge-text2 text").css('opacity', '.30');
+            $(".badge-text2 text").css('mix-blend-mode', 'overlay');
+        } 
+        else 
+        {
+            
+            $(".badge-text2 text").css('opacity', '.22')
+            $(".badge-text2 text").css('mix-blend-mode', 'screen');
+        }
+    } else /* dark */ {
+        if(selectedFontColor === "#0f0f0f") {
+            // if black
+            $(".badge-text2 text").css('opacity', '.34')
+            $(".badge-text2 text").css('mix-blend-mode', 'hard-light');
+        } else {
+            $(".badge-text2 text").css('opacity', '.14')
+            $(".badge-text2 text").css('mix-blend-mode', 'screen');
+        }
     }
+
+
 }
 
 function switchBlendModeStencil( selectedOption ){
-    
-    if( $( selectedOption ).hasClass('black')) {
-    
-        if($("#stencil").css('mix-blend-mode') !== 'multiply') {
-            $("#stencil").css('mix-blend-mode', 'multiply');
-        }   
-    } 
-    else 
-    {
-        if ($("#stencil").css('mix-blend-mode') !== 'overlay' ) {
-            $("#stencil").css('mix-blend-mode', 'overlay')
+
+    if (currentApronColor === "light") {
+        if ($(selectedOption).hasClass('black')) {
+
+            if ($("#stencil").css('mix-blend-mode') !== 'multiply') {
+                $("#stencil").css('mix-blend-mode', 'multiply');
+            }
         }
+        else {
+            if ($("#stencil").css('mix-blend-mode') !== 'overlay') {
+                $("#stencil").css('mix-blend-mode', 'overlay')
+            }
+        }
+    } else if (currentApronColor === "dark") {
+
+        if(selectedColor === "#0f0f0f") {
+            $("#stencil").css('mix-blend-mode', 'color-burn');     
+            
+        } else {
+            $("#stencil").css('mix-blend-mode', 'hard-light');     
+            
+            
+        }
+      
+      
     }
+
 }
 
 
@@ -341,5 +469,26 @@ let constructQueryString = function (optionsArray) {
 
 // $(document).on("newMessage", newMessageHandler);
 
-// APRON color picker
+    function updateApronTextOpacity() {
+
+        // TODO separeate other settings from text opacity  maybe later on
+        if (currentApronColor === 'dark') {
+
+            if(selectedFontColor === "#0f0f0f") {
+                // if black
+                $(".badge-text2 text").css('opacity', '.34')
+            } else {
+                $(".badge-text2 text").css('opacity', '.14')
+            }
+            
+            // $('.badge-text2').css('left', '6.6px');
+            // $('.badge-text2 text').css('text-shadow', "0px 0px 5px rgb(43,44, 48)");
+        }
+        else if (currentApronColor === 'light') {
+            $('.badge-text2 text').css('opacity', .22);
+   
+        }
+    }
+
+   
 });

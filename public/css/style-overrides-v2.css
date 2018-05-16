@@ -215,7 +215,7 @@ img#product {
 }
 
 
-
+/* transfer to apron_text.css */
 .badge-text2 text {
     fill:#98bdfe;;
     text-align: center; 
@@ -270,4 +270,7 @@ img#product {
     font-size: 1.7em;
 }
 
+#stencil {
+    mix-blend-mode: overlay;
+}
 
