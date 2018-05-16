@@ -1,0 +1,273 @@
+/* APRON FONTS */
+/* new fonts from Robert */
+@font-face {
+    font-family: Blambot;
+    src: url('../apron_font/new/BlambotProRegular.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: CC_wild_words_roman;
+    src: url('../apron_font/new/CC_Wild_Words_Roman_0.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: Coopbl;
+    src: url('../apron_font/new/coopbl_font.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: Extra_Grotesque;
+    src: url('../apron_font/new/Extra_Grotesque.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: Vladimir;
+    src: url('../apron_font/new/VLADIMIR.TTF') format('truetype'); 
+}
+
+@font-face {
+    font-family: "Gotham";
+    src:url('../fonts/Gotham-Book-Regular.otf');
+}
+@font-face {
+    font-family: "Gotham Medium";
+    src:url('../fonts/GothamMedium_1.ttf');
+}
+@font-face {
+    font-family: "Gotham ExtraLight";
+    src:url('../fonts/Gotham-Extra-Light.otf');
+}
+
+/* style OVERRIDES. Did not change default css styles from easy-responsive-tabs.css, monogram.css  */
+#MonoText {
+    text-transform: uppercase;
+}
+
+
+  .apron_thumbs img:hover {
+    transform: scale(1.1);
+  }
+
+  .apron_thumbs img { opacity: 1}
+
+  .color-option {
+      border-radius: 37px;
+      width: 37px;
+      height: 37px;
+      float: left;
+      margin: 4px;
+      border: 2px solid #fff;
+  }
+
+  .color-option:hover, .color-option2:hover {
+      border-color: #999;
+  }
+  
+  #font-color-picker, 
+  #stencil-color-picker {
+      clear: both;
+  }
+
+  #rrr-contain {
+      margin-top: 0;
+  }
+
+  .input-box {
+    width: auto;
+    clear: none;
+    height: 20px;
+  }
+
+  .ui-selectmenu-button{
+      height: 30px;
+  }
+
+  #fontFamilyDrop-button {
+      margin-top: 0;
+  }
+
+/* copied styles */
+
+
+/* GENERAL STYLES */
+
+body {
+    font-family: 'Gotham';
+    font-weight: 300;
+    font-size: 11px;
+}
+
+h2 {
+    margin: 10px 0;
+    
+}
+
+/****************** 
+HEADER STYLES 
+*******************/
+#header {
+    height: 88px;
+    margin-bottom: 10px;
+}
+#storeLogo {
+    float: left;
+    margin-top: 5px;
+}
+#storeLogo {
+    width: 150px;
+}
+#storeLogo img {
+    width: 80%;
+    height: auto;
+}
+#headerShortcuts {
+    float: right;
+    margin-top: 38px;
+    margin-right: 80px;
+    padding-top: 10px;
+}
+
+#headerShortcuts a span{
+    color: #000;
+    margin: 0 7px;
+}
+
+
+/****************** 
+MAIN CONTENT STYLES 
+*******************/
+
+
+img#product {
+    height: auto;
+    width: 100%;
+}
+
+.description {
+    font-size: 12px;
+     font-family: "Gotham ExtraLight";
+}
+
+.nav-tabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   /* justify-content: space-between;  */
+    justify-content: flex-start;
+    background-color: #f6f6f6;
+    border: 0;
+}
+
+/* bootstrap nav tabs override */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: #f6f6f6;
+    border: 0;
+}
+
+.tab-panel .nav li {
+    text-align: center;
+}
+
+/* marker for selected tab */
+.tab-panel .nav li.active {
+    border-bottom: 3px solid #333;
+}
+
+.tab-panel .nav li a {
+    font-size: 12px;
+    color: #51b992;
+    font-weight: 700;      
+}
+
+.tab-panel .nav li.active a {
+    color: #000;
+}
+
+.favorite-heart {
+    position: absolute;
+    right: -10px;
+    top:13px;
+    max-width: 23px;
+    cursor: pointer;
+}
+
+.item-color-option {    
+    display: inline-block;    
+    margin: 5px;
+    cursor: pointer;    
+}
+
+.item-color-option img {  
+    width: 57px; 
+    height: auto;
+    -moz-border-radius: 57px;
+    -webkit-border-radius: 57px;
+    border-radius: 57px;
+    transition: transform .2s;
+    border: 2px solid #fff;
+}
+
+.item-color-option.active img{
+    border-color:#333;
+}
+
+.item-color-option img:hover {
+    transform: scale(1.15);
+}
+
+
+
+.badge-text2 text {
+    fill:#98bdfe;;
+    text-align: center; 
+    font-size: 15px; 
+    font-family: 'Extra_Grotesque';
+    mix-blend-mode: unset;
+    opacity: .29;
+    letter-spacing: 'normal';
+    transform: scale(1,1.4);
+}
+
+ .slider-wrapper, .slider-wrapper2 {
+    position: fixed;
+    top:0;
+    left: 0;
+    box-shadow: 1px 3px 10px rgba(10, 10, 10, 0.5);
+    border: 0.07rem solid rgb(100,100,100);
+    background: rgba(30,30,30,0.85);
+    padding: 3px 15px;
+    border-radius: 0 0 10px;
+    color: #ddd;
+  }
+
+  .slider-wrapper2 {
+      top: 320px;      
+  }
+
+
+  /* fonts */
+
+
+.color-option.active,
+.stencil-color-option.active {
+    border: black 2px solid;
+}
+
+
+#fontFamilyDrop-menu #ui-id-1 {font-family: 'CC_wild_words_roman' !important;}
+#fontFamilyDrop-menu #ui-id-2 {font-family: 'Blambot' !important;}
+#fontFamilyDrop-menu #ui-id-3 {font-family: 'Coopbl' !important;}
+#fontFamilyDrop-menu #ui-id-4 {font-family: 'Extra_Grotesque' !important;}
+#fontFamilyDrop-menu #ui-id-5 {font-family: 'Vladimir' !important;}
+
+
+#fontFamilyDrop option {
+    font-size: 1.1em;
+}
+
+#stencilDrop, #MonoText, #fontFamilyDrop {
+    width: 200px;
+    font-family: 'Roboto' !important;
+    font-size: 1.7em;
+}
+
+
