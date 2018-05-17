@@ -11,7 +11,7 @@ $(document).ready(function () {
     
     // default settings
     
-    let currentFont = null;
+    let currentFont = "Extra_Grotesque";
     let currentFontSize = null;
     
     let currentFontOpacity = null;
@@ -221,6 +221,17 @@ $(document).ready(function () {
                 'letter-spacing' : letterSpacing,
                 'font-weight' : fontWeight
             });  
+
+        adjustApronTextPos();
+    }
+
+    function adjustApronTextPos(){
+        //change to case
+        if( currentFont === "CC_wild_words_roman") {
+            $('.badge-text2').css('top', "-242px");
+        } else {
+            $('.badge-text2').css('top', "-247px");
+        }
     }
     
     function updateFontColor(e){
