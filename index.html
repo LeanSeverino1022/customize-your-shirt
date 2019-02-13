@@ -12,52 +12,10 @@
 
     <title>T-shirt Custom Design</title>
 
-
     <link rel="stylesheet" type="text/css" href="public/css/monogram.css">
     <link rel="stylesheet" type="text/css" href="public/css/style-overrides-v2.css">
     <link rel="stylesheet" type="text/css" href="public/css/apront_text.css">
 
-    <style>
-        .product-img-box {
-                /* padding-bottom: 50px; */
-                /* border: red 2px solid */
-            }
-    
-            h2 span {
-                /* border: red 1px solid; */
-                font-weight: bold;  
-                font-size: 26px;
-            }
-    
-            fieldset {
-                border: 0;
-            }
-    
-            label {
-                display: block;
-                margin: 30px 0 0 0;
-            }
-    
-            .overflow {
-                height: 200px;
-            }
-    
-            .ui-menu-item {
-                padding-left: 59px;
-                padding-top: 20px;
-                /* font-family: Futura-Heavy; */
-                padding-bottom: 10px;
-                font-weight: 100;
-                text-transform: uppercase;
-                font-size: 14px;
-                letter-spacing: 1.5px;
-            }
-    
-    
-            .ui-menu .ui-menu-item {
-                min-height: 30px;
-            }
-        </style>
 </head>
 
 
@@ -65,10 +23,10 @@
 
     <div id="header"></div>
 
-    <div class="container">
+    <main class="container">
         <div class="row">
 
-            <div class="product-view col-md-6 col-md-offset-1">
+            <section class="product-view col-md-6 col-md-offset-1">
 
                 <div class="product-essential">
 
@@ -98,20 +56,17 @@
 
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="col-md-5">
+            <section class="col-md-5 options-view">
                 <!-- opions view -->
-                <div style="height: 30px"></div>
-
-
-                <div id="apron_color">   
+                <div id="apron_color">
                     <div class="apron_thumbs">
                         <img class="apron-option light active" data-target="o1" data-color="1" src="public/images/shirt-colors/white-t.jpg">
                         <img class="apron-option dark" data-target="o1" data-color="2" src="public/images/shirt-colors/black-t.jpg">
                     </div>
                 </div>
-                
+
                 <input id="MonoText" type="text" placeholder="Apron Text" maxlength="11">
                 <br>
                 <div class="form-group">
@@ -179,9 +134,9 @@
                 <div class="bundle-option form-group">
 
                 </div>
-            </div>
+            </section>
         </div> <!-- row -->
-    </div>
+    </main>
 
     <!-- <script src="public/js/arctext.js"></script> -->
     <script src="public/js/monogram_final.js"></script>

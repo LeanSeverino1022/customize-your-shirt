@@ -28,6 +28,9 @@ body{
     background: #CDCEC9;
 }
 
+section.options-view {
+    margin-top: 30px;
+}
 
 #apron_color {
     margin-bottom: 30px;
