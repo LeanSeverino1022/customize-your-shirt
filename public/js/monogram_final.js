@@ -29,14 +29,6 @@ $(document).ready(function () {
             $('#font-color-picker').on('click', '.color-option', updateFontColor);
         },
 
-        // adjustments based on user selected options.
-        updateTextOpacity,          //dependent on apron && text color
-        updateTextMixBlendMode,     //dependent on apron && text color
-        updateStencilMixBlendMode, //dependent on apron && stencil color
-
-
-
-
     }
 
 
@@ -78,9 +70,6 @@ $(document).ready(function () {
         $(".apron-background img").attr("src", $(e.target).attr("src"));
 
         //update text advanged properties
-        apron.updateTextOpacity();
-        apron.updateTextMixBlendMode();
-        apron.updateStencilMixBlendMode();
 
 
         if (apron.color === ENUM_APRON_COLOR.BLACK) {
@@ -221,8 +210,6 @@ $(document).ready(function () {
             'stroke-opacity': .5
         });
 
-        apron.updateTextOpacity();
-        apron.updateTextMixBlendMode();
     }
 
     function updateStencilColor(e) {
@@ -255,101 +242,9 @@ $(document).ready(function () {
         updateStencilMixBlendMode();
     }
 
-    function updateStencilMixBlendMode() {
+ 
+   
 
-        var mixBlendMode = null;
-
-        if (apron.color === ENUM_APRON_COLOR.GREY) {
-
-            //if apron is grey, blend mode is overlay except when stencil color is #0f0f0f
-            switch (apron.stencilColor) {
-                case '#0f0f0f':
-                    mixBlendMode = 'multiply';
-                    break;
-
-                default:
-                    mixBlendMode = 'overlay'
-                    break;
-            }
-
-        } else if (apron.color === ENUM_APRON_COLOR.BLACK) {
-
-            //if apron is black, blend mode is overlay except when stencil color is #0f0f0f
-            switch (apron.stencilColor) {
-                case '#0f0f0f':
-                    mixBlendMode = 'color-burn';
-                    break;
-                // case: '': add more color 
-                default:
-                    mixBlendMode = 'hard-light'
-                    break;
-            }
-        }
-
-        //if current mix blend mode is not same value of new mode, 
-        //update current mix blend mode value
-
-        if ($("#stencil").css('mix-blend-mode') !== mixBlendMode) {
-            $("#stencil").css('mix-blend-mode', mixBlendMode);
-        }
-    }
-
-    function updateTextOpacity() {
-
-        // TODO separeate other settings from text opacity  maybe later on
-        if (apron.color === ENUM_APRON_COLOR.BLACK) {
-
-            switch (apron.textColor) {
-                case "#0f0f0f":
-                    $(".badge-text2 text").css('opacity', '.34')
-                    break;
-
-                default:
-                    $(".badge-text2 text").css('opacity', '.14')
-                    break;
-            }
-        }
-        else if (apron.color === ENUM_APRON_COLOR.GREY) {
-
-            switch (apron.textColor) {
-                case "#0f0f0f":
-                    $(".badge-text2 text").css('opacity', '.30');
-                    break;
-
-                default:
-                    $(".badge-text2 text").css('opacity', '.22')
-                    break;
-            }
-        }
-    }
-
-    function updateTextMixBlendMode() {
-
-        if (apron.color === ENUM_APRON_COLOR.GREY) {
-
-            switch (apron.textColor) {
-                case "#0f0f0f":
-                    $(".badge-text2 text").css('mix-blend-mode', 'overlay');
-                    break;
-
-                default:
-                    $(".badge-text2 text").css('mix-blend-mode', 'screen');
-                    break;
-            }
-        }
-
-        else if (apron.color === ENUM_APRON_COLOR.BLACK) {
-
-            switch (apron.textColor) {
-                case "#0f0f0f":
-                    $(".badge-text2 text").css('mix-blend-mode', 'hard-light');
-                    break;
-
-                default:
-                    $(".badge-text2 text").css('mix-blend-mode', 'screen');
-                    break;
-            }
-        }
-    }
+    
 
 });
