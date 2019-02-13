@@ -24,17 +24,28 @@
 	unicode-range: U+0020-00FE;
 }
 
+body{
+    background: #CDCEC9;
+}
+
+.product-img-box  {
+    background: #CDCEC9;
+}
 
 
 
+.pillow-contain-show {
+    opacity: 1 !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
 
 
 
-
-
-
-
-.blend-stencil {position: absolute; left:173px; width: 170px; z-index: 1;  top: 150px;}
+.blend-stencil {position: absolute; left:193px; width: 170px; z-index: 1;  top: 150px;}
 .blend-stencil img {    width: 175px;
     height: 175px;}
 
@@ -51,13 +62,7 @@
 
 
 
-.apron-shadow2 {
-	    position: absolute;
-    z-index: 5;
-    mix-blend-mode: multiply;
-	-webkit-mix-blend-mode: multiply;
-    opacity: 0.1;
-}
+
 
 
 #MonoText {
@@ -78,7 +83,6 @@
 .input-box input, .input-box select {min-width:100%; margin-bottom:5px !important; }
 
 
-.apron-outline {position: absolute; left:0; top:0; z-index: 99;}
 
 .badge {
   left: 19.25%;

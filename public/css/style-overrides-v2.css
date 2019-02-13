@@ -105,7 +105,7 @@ h2 {
 HEADER STYLES 
 *******************/
 #header {
-    height: 88px;
+    height: 20px;
     margin-bottom: 10px;
 }
 #storeLogo {
@@ -271,6 +271,7 @@ img#product {
 }
 
 #stencil {
-    mix-blend-mode: overlay;
+    mix-blend-mode: normal;
+    opacity: 1;
 }
 

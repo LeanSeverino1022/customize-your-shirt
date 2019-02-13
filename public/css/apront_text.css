@@ -6,9 +6,13 @@
 
     font-size: 15px; 
     font-family: 'Extra_Grotesque';
-    opacity: .22;    
+    opacity: .7;    
     stroke-opacity: .4;   
-    mix-blend-mode: screen;
+    mix-blend-mode: normal;
     letter-spacing: 'normal';
     transform: scale(1,1.4);
+}
+
+textpath {
+    /* opacity: 1 !important; */
 }
