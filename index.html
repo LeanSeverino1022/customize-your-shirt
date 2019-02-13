@@ -1,30 +1,25 @@
+<html>
 
-<html>    
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-        <!-- BOOTSTRAP -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-         <title>T-shirt Custom Design</title>
- 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+        crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
-        <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js" integrity="sha256-xI/qyl9vpwWFOXz7+x/9WkG5j/SVnSw21viy8fWwbeE="
-            crossorigin="anonymous"></script>
-    
-        <!-- copied css from original source of the demo http://everthread.com/tradeshow/-->
-        <link rel="stylesheet" type="text/css" href="public/css/bb2.css">
-        <link rel="stylesheet" type="text/css" href="public/css/monogram.css">
-        <link rel="stylesheet" type="text/css" href="public/css/style-overrides-v2.css">
-        <link rel="stylesheet" type="text/css" href="public/css/apront_text.css">
-    
-        <style>
-            .product-img-box {
-                padding-bottom: 50px;
+    <!-- BOOTSTRAP -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <title>T-shirt Custom Design</title>
+
+
+    <link rel="stylesheet" type="text/css" href="public/css/monogram.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style-overrides-v2.css">
+    <link rel="stylesheet" type="text/css" href="public/css/apront_text.css">
+
+    <style>
+        .product-img-box {
+                /* padding-bottom: 50px; */
                 /* border: red 2px solid */
             }
     
@@ -62,166 +57,141 @@
             .ui-menu .ui-menu-item {
                 min-height: 30px;
             }
-
-          
         </style>
-    
-    
-    </head>
-    
-    
-    <body>
-        
-        <div id="header">
-           
-        </div>
-    
-        <div class="container">       <div class="row">
-                   
-                <div class="product-view col-md-6 col-md-offset-1">
-    
-                    <div class="product-essential">
-    
-                        <div class="product-img-box">      
-    
-                            <div id="pillow1-contain" class="pillow-contain-show">                              
-                                <svg class="badge-text2" viewBox="0 0 500 500" style="position: relative; top: -247px; left: 6.6px;">
-                   
-                                    <path id="curve" fill="transparent" d="M 150 245 C 230 220 290 240 320 245"></path>                                   
-                                                                                                                                        
-                                    <text width="500" style="text-anchor: middle; letter-spacing: 2px">
-                                        <textPath xlink:href="#curve" startOffset="50%">
+</head>
+
+
+<body>
+
+    <div id="header"></div>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="product-view col-md-6 col-md-offset-1">
+
+                <div class="product-essential">
+
+                    <div class="product-img-box">
+
+                        <div id="pillow1-contain" class="pillow-contain-show">
+                            <svg class="badge-text2" viewBox="0 0 500 500" style="position: relative; top: -247px; left: 6.6px;">
+
+                                <path id="curve" fill="transparent" d="M 150 245 C 230 220 290 240 320 245"></path>
+
+                                <text width="500" style="text-anchor: middle; letter-spacing: 2px">
+                                    <textPath xlink:href="#curve" startOffset="50%">
                                         BON APPETIT
-                                        </textPath>
-                                    </text>
-                                    </svg>
-                                
-                                <div id="stencil" class="blend-stencil" style="opacity: 1;">
-                                    <img id="stencilImg" src="public/images/stencil1.png" style="filter: opacity(0.18) drop-shadow(rgb(231, 150, 127) 0px 0px 0px);">
-                                </div>
+                                    </textPath>
+                                </text>
+                            </svg>
 
+                            <div id="stencil" class="blend-stencil" style="opacity: 1;">
+                                <img id="stencilImg" src="public/images/stencil1.png" style="filter: opacity(0.18) drop-shadow(rgb(231, 150, 127) 0px 0px 0px);">
                             </div>
-                            <div class="apron-background">
-                                <img src="public/images/shirt-colors/black-t.jpg">
-                            </div>
-                            <div class="rrr2 large" id="normal-repeat"></div>
-    
+
                         </div>
+                        <div class="apron-background">
+                            <img src="public/images/shirt-colors/black-t.jpg">
+                        </div>
+                        <div class="rrr2 large" id="normal-repeat"></div>
+
                     </div>
                 </div>
-        
-                <div class="col-md-5"> <!-- opions view -->
-                    <div style="height: 30px"></div>
-             
-    
-                        <div class="tab-content">                          
-\                            <div id="apron_color" class="tab-pane fade in active">
-                                <br>
-                                <br>
-                                <div class="apron_thumbs">
-                                    <img class="apron-option light active" data-target="o1" data-color="1"  src="public/images/shirt-colors/white-t.jpg">
-                                    <img class="apron-option dark"data-target="o1" data-color="2"  src="public/images/shirt-colors/black-t.jpg">
-                                </div>                            
-                            </div>
-                            
-                            
+            </div>
 
-                            <div>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                  
-                                    <div class="row">
-                                        <div class="input-box col-sm-6">
-                                            <input id="MonoText" type="text" placeholder="Apron Text" maxlength="11">
-                                        </div>
-                                        
-                                        <div class="input-box col-sm-6">                                
-                                            <div class="form-group">
-                                                <select class="form-control" name="fontFamilyDrop" id="fontFamilyDrop">
-                                                    <option value="font1" style="font-family: 'CC_wild_words_roman'; height: 25px">FONT 1</option>
-                                                    <option value="font2" style="font-family: 'Blambot'">FONT 2</option>
-                                                    <option value="font3" style="font-family: 'Coopbl'">FONT 3</option>
-                                                    <option value="font4" style="font-family: 'Extra_Grotesque'" selected="selected">FONT 4</option>
-                                                    <option value="font5" style="font-family: 'Vladimir'">FONT 5</option>
-                                                </select>
-                                            </div>                                    
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <br>
-                                  
-                                    <div id="font-color-picker">
-                                    
-                                        <div class="color-option" style="background-color: #e7967f;" data-color="#e7967f"></div>
-                                        <div class="color-option" style="background-color: #0f0f0f;" data-color="#0f0f0f"></div>
-                                        <div class="color-option active" style="background-color: #98bdfe;" data-color="#98bdfe"></div>
-                                        <div class="color-option" style="background-color: #93eee5;" data-color="#93eee5"></div>
-                                        <div class="color-option" style="background-color: #669eba;" data-color="#669eba"></div>
-                                        
-                                        <div class="color-option" style="background-color: #774B3A;" data-color="#774B3A"></div>
-                                        <div class="color-option" style="background-color: #DC5D61;" data-color="#DC5D61"></div>
-                                        
-                                        <div class="color-option" style="background-color: #91B54D;" data-color="#91B54D"></div>
-                                        <div class="color-option" style="background-color: #fafdae;" data-color="#fafdae"></div>
-                                        <div class="color-option" style="background-color: #fba057;" data-color="#fba057"></div>
-            
-                                    </div>
-                            
-                                </div>
+            <div class="col-md-5">
+                <!-- opions view -->
+                <div style="height: 30px"></div>
 
-                                <div id="apron_stencil">
-                                        <br><br>
-                                        <br><br>
-                                        <br><br>
-                                            
-                                        <fieldset>
-                                            <div class="form-group">
-                                                <select class="form-control" name="stencilDrop" id="stencilDrop">
-                                                    <option value="1">Roosters</option>
-                                                    <option value="2">Corkscrew</option>
-                                                    <option value="3">Cow</option>
-                                                    <option value="4">Hamburger</option>
-                                                    <option value="5">BBQ</option>
-                                                </select>
-                                            </div>
-                                    
-                                        </fieldset>
-                                        <br>
-                                        <div id="stencil-color-picker">
-                                            <div class="stencil color-option active" style="background: #e7967f;" data-color="#e7967f"></div>
-                                            <div class="stencil color-option black" style="background: #0f0f0f;" data-color="#0f0f0f"></div>
-                                            <div class="stencil color-option" style="background: #98bdfe;" data-color="#98bdfe"></div>
-                                            <div class="stencil color-option" style="background: #93eee5;" data-color="#93eee5"></div>
-                                            <div class="stencil color-option" style="background: #669eba;" data-color="#669eba"></div>
-                                            
-                                            <div class="stencil color-option brown" style="background: #774B3A;" data-color="#774B3A"></div>
-                                            <div class="stencil color-option" style="background: #DC5D61;" data-color="#DC5D61"></div>
-                                            
-                                            <div class="stencil color-option" style="background: #91B54D;" data-color="#91B54D"></div>
-                                            <div class="stencil color-option" style="background: #fafdae;" data-color="#fafdae"></div>
-                                            <div class="stencil color-option" style="background: #fba057;" data-color="#fba057"></div>
-                                        </div>
-                                    
-                                    </div>
-                        
-                        </div>
-   
-    
-                    <div class="bundle-option form-group">  
-    
+
+                <div id="apron_color">   
+                    <div class="apron_thumbs">
+                        <img class="apron-option light active" data-target="o1" data-color="1" src="public/images/shirt-colors/white-t.jpg">
+                        <img class="apron-option dark" data-target="o1" data-color="2" src="public/images/shirt-colors/black-t.jpg">
                     </div>
                 </div>
-            </div> <!-- row -->
-        </div>
-        
-        <!-- <script src="public/js/arctext.js"></script> -->
-        <script src="public/js/monogram_final.js"></script>
-        
-    </body>
-    
-    </html>
+                
+                <input id="MonoText" type="text" placeholder="Apron Text" maxlength="11">
+                <br>
+                <div class="form-group">
+                    <select class="form-control" name="fontFamilyDrop" id="fontFamilyDrop">
+                        <option value="font1" style="font-family: 'CC_wild_words_roman'; height: 25px">FONT
+                            1</option>
+                        <option value="font2" style="font-family: 'Blambot'">FONT 2</option>
+                        <option value="font3" style="font-family: 'Coopbl'">FONT 3</option>
+                        <option value="font4" style="font-family: 'Extra_Grotesque'" selected="selected">FONT
+                            4</option>
+                        <option value="font5" style="font-family: 'Vladimir'">FONT 5</option>
+                    </select>
+                </div>
+
+                <div id="font-color-picker">
+
+                    <div class="color-option" style="background-color: #e7967f;" data-color="#e7967f"></div>
+                    <div class="color-option" style="background-color: #0f0f0f;" data-color="#0f0f0f"></div>
+                    <div class="color-option active" style="background-color: #98bdfe;" data-color="#98bdfe"></div>
+                    <div class="color-option" style="background-color: #93eee5;" data-color="#93eee5"></div>
+                    <div class="color-option" style="background-color: #669eba;" data-color="#669eba"></div>
+
+                    <div class="color-option" style="background-color: #774B3A;" data-color="#774B3A"></div>
+                    <div class="color-option" style="background-color: #DC5D61;" data-color="#DC5D61"></div>
+
+                    <div class="color-option" style="background-color: #91B54D;" data-color="#91B54D"></div>
+                    <div class="color-option" style="background-color: #fafdae;" data-color="#fafdae"></div>
+                    <div class="color-option" style="background-color: #fba057;" data-color="#fba057"></div>
+
+                </div>
+
+
+                <div id="apron_stencil">
+                    <fieldset>
+                        <div class="form-group">
+                            <select class="form-control" name="stencilDrop" id="stencilDrop">
+                                <option value="1">Roosters</option>
+                                <option value="2">Corkscrew</option>
+                                <option value="3">Cow</option>
+                                <option value="4">Hamburger</option>
+                                <option value="5">BBQ</option>
+                            </select>
+                        </div>
+
+                    </fieldset>
+                    <div id="stencil-color-picker">
+                        <div class="stencil color-option active" style="background: #e7967f;" data-color="#e7967f"></div>
+                        <div class="stencil color-option black" style="background: #0f0f0f;" data-color="#0f0f0f"></div>
+                        <div class="stencil color-option" style="background: #98bdfe;" data-color="#98bdfe"></div>
+                        <div class="stencil color-option" style="background: #93eee5;" data-color="#93eee5"></div>
+                        <div class="stencil color-option" style="background: #669eba;" data-color="#669eba"></div>
+
+                        <div class="stencil color-option brown" style="background: #774B3A;" data-color="#774B3A"></div>
+                        <div class="stencil color-option" style="background: #DC5D61;" data-color="#DC5D61"></div>
+
+                        <div class="stencil color-option" style="background: #91B54D;" data-color="#91B54D"></div>
+                        <div class="stencil color-option" style="background: #fafdae;" data-color="#fafdae"></div>
+                        <div class="stencil color-option" style="background: #fba057;" data-color="#fba057"></div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="bundle-option form-group">
+
+                </div>
+            </div>
+        </div> <!-- row -->
+    </div>
+
+    <!-- <script src="public/js/arctext.js"></script> -->
+    <script src="public/js/monogram_final.js"></script>
+
+</body>
+
+</html>
+
+<!-- TO ADD LATER 
+1. allow user to adjust font-size - 
+
+
+-->

@@ -28,22 +28,32 @@ body{
     background: #CDCEC9;
 }
 
-.product-img-box  {
-    background: #CDCEC9;
+
+#apron_color {
+    margin-bottom: 30px;
+}
+
+#apron_color::after,
+#font-color-picker::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#font-color-picker {
+    margin-bottom: 30px;
 }
 
 
-
+/* this part. todo: allow users to adjust */
 .pillow-contain-show {
     opacity: 1 !important;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -30;
     width: 100%;
     height: 100%;
 }
-
-
 
 .blend-stencil {position: absolute; left:193px; width: 170px; z-index: 1;  top: 150px;}
 .blend-stencil img {    width: 175px;
@@ -82,98 +92,3 @@ body{
 .input-box {float:left; clear: both; width: 100%; }
 .input-box input, .input-box select {min-width:100%; margin-bottom:5px !important; }
 
-
-
-.badge {
-  left: 19.25%;
-  position: relative;
-  width: 400px;
-  border-radius: 50%;
-  transform: rotate(-32deg);
-}
-.badge h1 {color:#fff;}
-
-
-
-
-
-	
-	h6 {font-family: 'Futura-Heavy'; font-weight: 100; font-size: 17px; color:#444;  margin-bottom: 10px; margin-top: 15px; width:100%; clear: both; float:left; }
-#fontFamilyDrop-button {margin-top: -6px;  }
-#fontFamilyDrop-button .ui-selectmenu-text {line-height: 1.1em; font-size: 13px; font-family: 'Roboto';}
-
-
-#fontFamilyDrop-menu .ui-menu-item { padding-top: 10px !important; padding-bottom: 0 !important; font-weight: 100; font-size: 22px;}
-
-
-
-	.monoOptionsRight fieldset {float:left; margin-left: -12px;}
-	#select_364 {margin-top: 6px;}
-	#fontFamilyDrop-menu .ui-icon.avatar {display: none !important;}
-#fontFamilyDrop-menu .ui-menu-item {padding-left: 20px !important;}
-	.ui-selectmenu-button {
-		
-		    background: url('../images/icons/select-arrow.gif?jcb=1461784165') top right no-repeat #fff;
- font-size: 12px;
-    height: 13px;
-    font-family: 'Futura-Heavy' !important;
-    line-height: 14px;
-    padding: 0px 24px 14px 4px;
-    display: block;
-    text-decoration: none;
-    border: 2px solid #DDD;
-    float: left;
-    color: #666!important;
-    border-radius: 0 !important;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-	
-	}
-	
-	
-	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {background: #fff !important;}
-	#colortabs {z-index: 1 !important;}
-	.ui-selectmenu-menu .ui-menu {position: relative; z-index: 20;}
- 
-    /* select with custom icons */
-    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item {
-      padding: 0.5em 0 0.5em 3em;
-    }
-    .ui-selectmenu-menu .ui-menu.customicons .ui-menu-item .ui-icon {
-      height: 24px;
-      width: 24px;
-      top: 0.1em;
-    }
-	
-	.ui-menu .ui-menu-item {min-height: 30px; }
-	.ui-menu-icons .ui-menu-item {
-	padding-left: 59px;
-    padding-top: 20px;
-    font-family: 'Futura-Heavy';
-    padding-bottom: 10px;
-    font-weight: 100;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
-
-    .ui-icon.video {
-      background: url("images/24-video-square.png") 0 0 no-repeat;
-    }
-    .ui-icon.podcast {
-      background: url("images/24-podcast-square.png") 0 0 no-repeat;
-    }
-    .ui-icon.rss {
-      background: url("images/24-rss-square.png") 0 0 no-repeat;
-    }
- 
-    /* select with CSS avatar icons */
-    option.avatar {
-      background-repeat: no-repeat !important;
-      padding-left: 20px;
-    }
-	
-
-	/* Custom dropdowns with images code end */
-	
