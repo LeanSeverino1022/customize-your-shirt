@@ -1,0 +1,177 @@
+/* PAGE FONT */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* PRODUCT FONT */
+@font-face {
+    font-family: Blambot;
+    src: url('../apron_font/new/BlambotProRegular.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: CC_wild_words_roman;
+    src: url('../apron_font/new/CC_Wild_Words_Roman_0.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: Coopbl;
+    src: url('../apron_font/new/coopbl_font.ttf') format('truetype'); 
+}
+
+@font-face {
+    font-family: Extra_Grotesque;
+    src: url('../apron_font/new/Extra_Grotesque.ttf') format('truetype'); 
+}
+@font-face {
+    font-family: Vladimir;
+    src: url('../apron_font/new/VLADIMIR.TTF') format('truetype'); 
+}
+
+
+body{
+    background: #CDCEC9;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+}
+
+#header {
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+section.options-view {
+    margin-top: 30px;
+}
+
+#apron_color {
+    margin-bottom: 30px;
+}
+
+#apron_color::after,
+#font-color-picker::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#font-color-picker {
+    margin-bottom: 30px;
+}
+
+
+/* this part. todo: allow users to adjust */
+.pillow-contain-show {
+    opacity: 1 !important;
+    position: absolute;
+    left: 0;
+    top: -30;
+    width: 100%;
+    height: 100%;
+}
+
+.blend-stencil {
+    position: absolute; 
+    left:222px; 
+    width: 120px; 
+    z-index: 1;  
+    top: 160px;
+    opacity: .7;
+}
+
+
+
+.product_thumbs img {
+    width: 70px;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.product_thumbs img, 
+.product_thumbs img:hover {
+    transition: all 0.4s ease; -webkit-transition: all 0.4s ease;
+}
+
+.product_thumbs img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  .product_thumbs img { opacity: .6}
+
+
+
+
+
+#MonoText {
+	font-size: 12px;
+    height: 30px;
+	padding-left: 6px;
+    line-height: 17px;
+    padding: 5px 24px 5px 10px;
+    display: block;
+    text-decoration: none;
+    border: 2px solid #DDD;
+    color: #666!important;
+
+}
+
+
+.input-box {float:left; clear: both; width: 100%; }
+.input-box input, .input-box select {min-width:100%; margin-bottom:5px !important; }
+
+.hide {
+    display: none;
+}
+
+.color-option:hover, .color-option2:hover {
+    border-color: #999;
+}
+
+.color-option.active,
+.stencil-color-option.active {
+    border: black 2px solid;
+}   
+
+.color-option {
+    border-radius: 37px;
+    width: 37px;
+    height: 37px;
+    float: left;
+    margin: 4px;
+    border: 2px solid #fff;
+}
+
+#fontFamilyDrop-menu #ui-id-1 {font-family: 'CC_wild_words_roman' !important; }
+#fontFamilyDrop-menu #ui-id-2 {font-family: 'Blambot' !important;}
+#fontFamilyDrop-menu #ui-id-3 {font-family: 'Coopbl' !important;}
+#fontFamilyDrop-menu #ui-id-4 {font-family: 'Extra_Grotesque' !important;}
+#fontFamilyDrop-menu #ui-id-5 {font-family: 'Vladimir' !important;}
+
+
+#fontFamilyDrop option {
+    font-size: 1.1em;
+}
+
+#stencilDrop, #MonoText, #fontFamilyDrop {
+    font-size: 1.7em;
+}
+
+#stencil {
+    mix-blend-mode: normal;
+    opacity: 1;
+}
+
+.badge-text2 text {
+    fill:#98bdfe; /* overridden in js */
+    text-shadow: 0 0px 2px rgba(152,189,254,1);
+    /* stroke: rgba(152,189,254, .5); */
+
+    font-size: 15px; 
+    font-family: 'Extra_Grotesque';
+    /* opacity: .7;    
+    stroke-opacity: .4;    */
+    mix-blend-mode: normal;
+    letter-spacing: 'normal';
+    transform: scale(1,1.4);
+}
