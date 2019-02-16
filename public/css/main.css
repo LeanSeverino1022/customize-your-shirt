@@ -26,11 +26,15 @@
     src: url('../apron_font/new/VLADIMIR.TTF') format('truetype'); 
 }
 
+html {
+    font-size: 100%; /* 16px = 1rem (base) */
+}
+
 
 body{
-    background: #CDCEC9;
+    /* background: #CDCEC9; */
     font-family: 'Roboto', sans-serif;
-    font-size: 11px;
+    font-size: .75rem;
 }
 
 #header {
@@ -39,24 +43,16 @@ body{
 }
 
 section.options-view {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
-#apron_color {
-    margin-bottom: 30px;
-}
 
-#apron_color::after,
+#prod_color::after,
 #font-color-picker::after {
     content: "";
     clear: both;
     display: table;
 }
-
-#font-color-picker {
-    margin-bottom: 30px;
-}
-
 
 /* this part. todo: allow users to adjust */
 .pillow-contain-show {
@@ -73,15 +69,20 @@ section.options-view {
     left:222px; 
     width: 120px; 
     z-index: 1;  
-    top: 160px;
-    opacity: .7;
+    top: 130px;
+    opacity: 1;
 }
 
+.stencilImg{
+    fill: #e7967f;
+}
 
+section.options-view label {
+    font-size: 1.2rem;
+}
 
 .product_thumbs img {
     width: 70px;
-    height: auto;
     float: left;
     margin-right: 20px;
     margin-bottom: 10px;
@@ -92,30 +93,20 @@ section.options-view {
     transition: all 0.4s ease; -webkit-transition: all 0.4s ease;
 }
 
-.product_thumbs img:hover {
+.product_thumbs img:hover,
+.product_thumbs img.active {
     transform: scale(1.1);
     opacity: 1;
   }
 
-  .product_thumbs img { opacity: .6}
+  .product_thumbs img { opacity: .5}
 
 
-
-
-
-#MonoText {
-	font-size: 12px;
-    height: 30px;
-	padding-left: 6px;
-    line-height: 17px;
-    padding: 5px 24px 5px 10px;
-    display: block;
-    text-decoration: none;
-    border: 2px solid #DDD;
-    color: #666!important;
-
+.form-control{
+    line-height: 1.5;
+    padding: 4px;
+    height: auto;
 }
-
 
 .input-box {float:left; clear: both; width: 100%; }
 .input-box input, .input-box select {min-width:100%; margin-bottom:5px !important; }
@@ -130,7 +121,7 @@ section.options-view {
 
 .color-option.active,
 .stencil-color-option.active {
-    border: black 2px solid;
+    border: red 2px solid;
 }   
 
 .color-option {
@@ -157,10 +148,6 @@ section.options-view {
     font-size: 1.7em;
 }
 
-#stencil {
-    mix-blend-mode: normal;
-    opacity: 1;
-}
 
 .badge-text2 text {
     fill:#98bdfe; /* overridden in js */
@@ -172,6 +159,7 @@ section.options-view {
     /* opacity: .7;    
     stroke-opacity: .4;    */
     mix-blend-mode: normal;
-    letter-spacing: 'normal';
+    letter-spacing: '2px';
     transform: scale(1,1.4);
 }
+

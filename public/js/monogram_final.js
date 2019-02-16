@@ -1,27 +1,21 @@
 
-ENUM_APRON_COLOR = {
-    'GREY': 1,
-    'BLACK': 2,
-}
+// todo puyih: \
+//set defaults in initializeDefaults function
 
-// todo puyih: cleanup
 $(document).ready(function () {
 
-
-
-    // set the default apron settings
-    let apron = {
-        color: $('.apron-option.active').data().color, //selected by user
+    let product = {
+        color: $('.prod-option.active').data().color, //selected by user
         stencilColor: $('.color-option.active', '#stencil-color-picker').data().color, //selected by user
         textColor: $('.color-option.active', '#font-color-picker').data().color, //selected by user
         textFont: "Extra_Grotesque", //selected by user
         textFontSize: null, //dependent on the textFont
 
-        updateApronText: function () { $('textPath').text($("#MonoText").val().toUpperCase()) },
+        updateText: function () { $('textPath').text($("#MonoText").val().toUpperCase()) },
 
         setupEventListeners: function () {
-            $('#MonoText').on('keyup', apron.updateApronText);
-            $('.apron_thumbs').on("click", ".apron-option", updateApronColor);
+            $('#MonoText').on('keyup', product.updateText);
+            $('.product_thumbs').on("click", ".prod-option", updateProdColor);
             $("#stencilDrop").on("change", updateStencilFigure); //jquery ui selectmenu event
             $('#stencil-color-picker').on('click', '.color-option', updateStencilColor);
 
@@ -31,95 +25,58 @@ $(document).ready(function () {
 
     }
 
-
-    $(".nav-tabs a").click(function () {
-        $(this).tab('show');
-    });
+    initializeDefaults();
+    product.setupEventListeners();
 
 
-
-    initializeValues();
-    apron.setupEventListeners();
-
-
-    //dark and light for now
-    // let currentApronColor =  'light'
-
-
-
-
-    function initializeValues() {
-        //product section
-        $("#MonoText").val("BON APPETIT");
+    function initializeDefaults() {        
+        $("#MonoText").val("CARPE DIEM");
     }
 
-    function updateApronColor(e) {
+    function updateProdColor(e) {
 
         if ($(e.target).hasClass('active')) {
             return;
         }
 
         //render
-        $(".apron-option.active").removeClass('active');
+        $(".prod-option.active").removeClass('active');
         $(e.target).addClass('active');
 
         //update value
-        apron.color = $('.apron-option.active').data().color;
-
-        //update rendered apron color
-        $(".apron-background img").attr("src", $(e.target).attr("src"));
-
-        //update text advanged properties
-
-
-        if (apron.color === ENUM_APRON_COLOR.BLACK) {
-
-            $('#stencilImg').css('filter', `opacity(0.08) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-            // $stencilImg.css('background-color', apron.stencilColor);
-            $('#stencilImg').css('-webkit-filter', `opacity(0.08) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-        }
-        else if (apron.color === ENUM_APRON_COLOR.GREY) {
-            $('#stencilImg').css('filter', `opacity(0.18) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-            // $stencilImg.css('background-color', apron.stencilColor);
-            $('#stencilImg').css('-webkit-filter', `opacity(0.18) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-
-
-        }
-
-
-
-
-        // updateApronTextPath();
-
-
+        product.color = $('.prod-option.active').data().color;
     }
 
     function updateStencilFigure() {
 
         var val = $("#stencilDrop").val();
-        var image = $('#stencilImg').get(0);
 
         switch (parseInt(val)) {
+            case 0:
+                $('.stencilImg').toggleClass("hidden", true);
+                $('.stencilImg').eq(0).toggleClass("hidden",false);                    
+  
+                break;
             case 1:
-                image.src = 'public/images/stencil1.png'
+                $('.stencilImg').toggleClass("hidden", true);
+                $('.stencilImg').eq(1).toggleClass("hidden",false);      
                 break;
             case 2:
-                image.src = 'public/images/stencil2.png'
+                $('.stencilImg').toggleClass("hidden", true);
+                $('.stencilImg').eq(2).toggleClass("hidden",false);      
                 break;
             case 3:
-                image.src = 'public/images/stencil3.png'
+                $('.stencilImg').toggleClass("hidden", true);
+                $('.stencilImg').eq(3).toggleClass("hidden",false);      
                 break;
             case 4:
-                image.src = 'public/images//stencil4.png'
+                $('.stencilImg').toggleClass("hidden", true);
+                $('.stencilImg').eq(4).toggleClass("hidden",false);    
                 break;
-            case 5:
-                image.src = 'public/images/stencil5.png'
-                break;
-
+        
             default:
                 break;
-        }
-
+        }          
 
     }
 
@@ -127,46 +84,33 @@ $(document).ready(function () {
 
         let val = $("#fontFamilyDrop").val();
 
-
-        var letterSpacing = 'normal';
         var fontWeight = 'normal';
 
         switch (val) {
             case "font1":
-                apron.textFont = "CC_wild_words_roman";
-                apron.textFontSize = '22px';
-                letterSpacing = "-1px";
-                /* done */
+                product.textFont = "CC_wild_words_roman";
+                product.textFontSize = '22px';
                 break;
 
             case "font2":
-                apron.textFont = "Blambot";
-                apron.textFontSize = '16px';
-                // letterSpacing = "-1px";
-                /* done */
+                product.textFont = "Blambot";
+                product.textFontSize = '16px';
                 break;
 
             case "font3":
-                apron.textFont = "Coopbl";
-                apron.textFontSize = '19px';
-
-                // done
-
+                product.textFont = "Coopbl";
+                product.textFontSize = '19px';
                 break;
 
             case "font4":
-                apron.textFont = "Extra_Grotesque";
-                apron.textFontSize = '15px';
-                /* done */
+                product.textFont = "Extra_Grotesque";
+                product.textFontSize = '15px';
                 break;
 
             case "font5":
-                // todo: change to vladimir later
-                apron.textFont = "Vladimir";
-                apron.textFontSize = '19px';
-                letterSpacing: '1.5px';
+                product.textFont = "Vladimir";
+                product.textFontSize = '19px';
                 fontWeight = 'bold';
-                //  letterSpacing = "-1px";
                 break;
 
             default:
@@ -175,23 +119,15 @@ $(document).ready(function () {
 
         $('.badge-text2 text').css(
             {
-                'font-family': apron.textFont,
-                'font-size': apron.textFontSize,
-                'letter-spacing': letterSpacing,
+                'font-family': product.textFont,
+                'font-size': product.textFontSize,
+                // 'letter-spacing': letterSpacing,
                 'font-weight': fontWeight
             });
 
-        adjustApronTextPos();
     }
 
-    function adjustApronTextPos() {
-        //change to case
-        if (apron.textFont === "CC_wild_words_roman") {
-            $('.badge-text2').css('top', "-242px");
-        } else {
-            $('.badge-text2').css('top', "-247px");
-        }
-    }
+
 
     function updateFontColor(e) {
 
@@ -201,13 +137,11 @@ $(document).ready(function () {
         $("#font-color-picker > .color-option.active").removeClass('active');
         $(e.target).addClass('active');
 
-        apron.textColor = $(e.target).data().color;
+        product.textColor = $(e.target).data().color;
 
         $('.badge-text2 text').css({
-            'fill': apron.textColor,
-            'text-shadow': "0 0 2px " + apron.textColor,
-            'stroke': apron.textColor,
-            'stroke-opacity': .5
+            'fill': product.textColor,
+            'text-shadow': "0 0 2px " + product.textColor,
         });
 
     }
@@ -219,32 +153,9 @@ $(document).ready(function () {
         $("#stencil-color-picker > .stencil.color-option.active").removeClass('active');
         $(e.target).addClass('active');
 
-        apron.stencilColor = $(e.target).data().color;
+        product.stencilColor = $(e.target).data().color;
 
-
-        if (apron.color === ENUM_APRON_COLOR.GREY) {
-
-
-            $('#stencilImg').css('filter', `opacity(0.18) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-            // $stencilImg.css('background-color', apron.stencilColor);
-            $('#stencilImg').css('-webkit-filter', `opacity(0.18) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-
-        } else if (apron.color === ENUM_APRON_COLOR.BLACK) {
-
-
-            $('#stencilImg').css('filter', `opacity(0.08) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-            // $stencilImg.css('background-color', apron.stencilColor);
-            $('#stencilImg').css('-webkit-filter', `opacity(0.08) drop-shadow(${apron.stencilColor} 0px 0px 0px)`);
-
-        }
-
-
-        updateStencilMixBlendMode();
-    }
-
- 
-   
-
-    
+        $('.stencilImg').css('fill',$(e.target).data().color);
+    }    
 
 });
