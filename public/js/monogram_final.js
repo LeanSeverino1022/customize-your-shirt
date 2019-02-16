@@ -45,6 +45,9 @@ $(document).ready(function () {
 
         //update value
         product.color = $('.prod-option.active').data().color;
+
+        //update rendered apron color
+        $(".apron-background img").attr("src", $(e.target).attr("src"));
     }
 
     function updateStencilFigure() {
