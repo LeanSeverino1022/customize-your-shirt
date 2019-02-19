@@ -32,7 +32,7 @@ html {
 
 
 body{
-    /* background: #CDCEC9; */
+    background: #CDCEC9;
     font-family: 'Roboto', sans-serif;
     font-size: .75rem;
 }
@@ -103,7 +103,7 @@ section.options-view label {
     opacity: 1;
   }
 
-  .product_thumbs img { opacity: .5}
+  .product_thumbs img { opacity: .8}
 
 
 .form-control{
