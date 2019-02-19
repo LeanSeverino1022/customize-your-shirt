@@ -27,6 +27,7 @@ $(document).ready(function () {
 
     initializeDefaults();
     product.setupEventListeners();
+    centerProductViewScrollbar();
 
 
     function initializeDefaults() {        
@@ -160,5 +161,13 @@ $(document).ready(function () {
 
         $('.stencilImg').css('fill',$(e.target).data().color);
     }    
+
+    //on small devices, position horizontal scroll bar at center of div to view the whole shirt right away
+    function centerProductViewScrollbar(){
+        var outerContent = $('.product-view');
+        var innerContent = $('.pillow-contain-show');
+            
+        outerContent.scrollLeft( (innerContent.width() - outerContent.width()) / 2);
+    }
 
 });
