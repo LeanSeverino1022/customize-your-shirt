@@ -150,6 +150,7 @@ section.options-view label {
 
 #stencilDrop, #MonoText, #fontFamilyDrop {
     font-size: 1.7em;
+    text-transform: uppercase;
 }
 
 .badge-text2 {
