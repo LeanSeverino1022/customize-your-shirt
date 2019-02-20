@@ -58,9 +58,7 @@ section.options-view {
     display: table;
 }
 
-/* this part. todo: allow users to adjust */
-.pillow-contain-show {
-    opacity: 1 !important;
+.text-and-image-container {
     position: absolute;
     left: 0;
     top: -30;

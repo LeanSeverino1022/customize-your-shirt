@@ -47,8 +47,8 @@ $(document).ready(function () {
         //update value
         product.color = $('.prod-option.active').data().color;
 
-        //update rendered apron color
-        $(".apron-background img").attr("src", $(e.target).attr("src"));
+        //update rendered shirt color
+        $(".js-shirt-background > img").attr("src", $(e.target).attr("src"));
     }
 
     function updateStencilFigure() {
@@ -165,7 +165,7 @@ $(document).ready(function () {
     //on small devices, position horizontal scroll bar at center of div to view the whole shirt right away
     function centerProductViewScrollbar(){
         var outerContent = $('.product-view');
-        var innerContent = $('.pillow-contain-show');
+        var innerContent = $('.text-and-image-container');
             
         outerContent.scrollLeft( (innerContent.width() - outerContent.width()) / 2);
     }
